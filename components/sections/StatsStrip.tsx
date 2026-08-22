@@ -20,13 +20,15 @@ export function StatsStrip({
   variant?: "bar" | "card";
 }) {
   if (variant === "card") {
+    // The prototype uses repeat(N,1fr) matching the exact stat count (3 on
+    // most case studies, 4 on case 001) rather than a fixed 4 columns.
+    const desktopCols = stats.length >= 4 ? "md:grid-cols-4" : "md:grid-cols-3";
     return (
       <section className="bg-navy px-5 pb-[70px] sm:px-8 md:px-12">
         <Container>
-          {/* The prototype's 4-col grid has no defined mobile treatment;
-              2 cols on mobile is a minimal responsive adaptation, not a
-              redesign. */}
-          <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+          {/* The prototype's grid has no defined mobile treatment; 2 cols
+              on mobile is a minimal responsive adaptation, not a redesign. */}
+          <div className={`grid grid-cols-2 gap-5 ${desktopCols}`}>
             {stats.map((stat, i) => (
               <Reveal
                 key={stat.label}
