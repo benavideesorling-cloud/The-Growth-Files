@@ -14,6 +14,15 @@ export const contact = {
   linkedinUrl: "https://linkedin.com/in/benavideesf1b4",
 } as const;
 
+/**
+ * Where contact-form submissions are delivered. Overridable via
+ * CONTACT_TO_EMAIL (server-only env var, read only in API routes — never
+ * imported into a client component) for staging/testing without touching
+ * the publicly-displayed address above. Not a secret: it defaults to the
+ * same email already shown throughout the site.
+ */
+export const contactDestinationEmail = process.env.CONTACT_TO_EMAIL || contact.email;
+
 export type NavKey = "Home" | "Services" | "CaseStudies" | "Blog" | "About" | "Contact";
 
 export const mainNav: { key: NavKey; label: string; href: string }[] = [

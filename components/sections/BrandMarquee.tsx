@@ -24,16 +24,14 @@ export function BrandMarquee({ brands }: { brands: Brand[] }) {
             key={`${brand.name}-${i}`}
             role="img"
             aria-label={brand.name}
-            className="flex w-[180px] shrink-0 items-center justify-center opacity-55 grayscale contrast-[.9] transition-opacity duration-200 hover:opacity-90"
+            className="relative w-[180px] shrink-0 opacity-55 grayscale contrast-[.9] transition-opacity duration-200 hover:opacity-90"
             style={{ height: brand.height ?? BASE_HEIGHT }}
           >
-            <Image
-              src={brand.src}
-              alt={brand.name}
-              width={180}
-              height={brand.height ?? BASE_HEIGHT}
-              className="h-full w-auto object-contain"
-            />
+            {/* `fill` (not fixed width/height props) so the image sizes
+                purely from this container — mixing fixed props with the
+                previous CSS override (h-full w-auto) triggered Next's
+                aspect-ratio mismatch warning. */}
+            <Image src={brand.src} alt={brand.name} fill sizes="180px" className="object-contain" />
           </div>
         ))}
       </div>
