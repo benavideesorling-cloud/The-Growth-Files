@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Scaling app installs to 85K+ with Apple Search Ads | The Growth Files</title>
+<meta name="description" content="How a self-taught Apple Search Ads structure, branded, generic, and discovery campaigns working together, took a new app from zero to 85K+ installs." />
+<link rel="canonical" href="{SITE_URL}/case-studies/app-growth-apple-search-ads" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="From zero to 85K+ installs: building an Apple Search Ads program from scratch" />
+<meta property="og:description" content="How a self-taught Apple Search Ads structure, branded, generic, and discovery campaigns working together, took a new app from zero to 85K+ installs." />
+<meta property="og:url" content="{SITE_URL}/case-studies/app-growth-apple-search-ads" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"{SITE_URL}/case-studies/app-growth-apple-search-ads#article","headline":"From zero to 85K+ installs: building an Apple Search Ads program from scratch","description":"How a self-taught Apple Search Ads structure, branded, generic, and discovery campaigns working together, took a new app from zero to 85K+ installs.","author":{"@id":"{SITE_URL}/#person"},"mainEntityOfPage":"{SITE_URL}/case-studies/app-growth-apple-search-ads","about":["Apple Search Ads","App Growth","Performance Marketing"]},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"{SITE_URL}/"},
+{"@type":"ListItem","position":2,"name":"Case studies","item":"{SITE_URL}/case-studies"},
+{"@type":"ListItem","position":3,"name":"App growth with Apple Search Ads"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Should app store ad spend start before an app is fully built?","acceptedAnswer":{"@type":"Answer","text":"No. Spending on paid acquisition before there's a product to download burns budget with nothing to show for it. The more effective use of that period is preparation, such as formal training on the ad platform's budgeting and account structure, so the account is built correctly once the app is ready to launch."}},
+{"@type":"Question","name":"What is a discovery campaign in Apple Search Ads used for?","acceptedAnswer":{"@type":"Answer","text":"It functions as a keyword mining tool, similar in principle to a dynamic search ads campaign. Instead of targeting fixed terms, it surfaces whatever relevant search terms are actually driving downloads, which can then be evaluated and promoted into more targeted campaigns."}},
+{"@type":"Question","name":"Why add promoted keywords back as negative keywords in the discovery campaign?","acceptedAnswer":{"@type":"Answer","text":"To prevent the discovery campaign from competing with the more targeted campaign over the same keyword. Without that step, the two campaigns would bid against each other instead of the discovery campaign continuing to surface new, untapped keyword opportunities, a structure often called a keyword waterfall."}},
+{"@type":"Question","name":"How should an Apple Search Ads account be segmented?","acceptedAnswer":{"@type":"Answer","text":"By device, country, and language, so campaigns match how an app is actually being searched for and used in each market, rather than running a single undifferentiated structure globally."}},
+{"@type":"Question","name":"Is a keyword waterfall strategy a one time setup or an ongoing process?","acceptedAnswer":{"@type":"Answer","text":"Ongoing. It only works if negative keywords are actively maintained and checked for overlap between campaigns on a continuing basis, rather than configured once and left alone."}}]}
+]}
+</script>
+</helmet>
+<dc-import name="Header" active="CaseStudies" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:70px 48px 60px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <a href="./CaseStudies.dc.html" style="font-size:13px;color:#7d8b9a;">← All case studies</a>
+    <div style="margin-top:24px;">
+      <dc-import name="Eyebrow" label="CASE 003 · APP GROWTH" hint-size="260,24"></dc-import>
+    </div>
+    <h1 style="font-size:46px;font-weight:800;letter-spacing:-0.025em;color:#ffffff;margin:20px 0 16px;max-width:900px;line-height:1.1;">From zero to 85K+ installs: building an Apple Search Ads program from scratch</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:680px;line-height:1.6;margin:0 0 16px;text-wrap:pretty;">Branded, generic, and discovery campaigns working together, with a keyword waterfall as the engine.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;letter-spacing:0.04em;">ROLE: APP GROWTH  |  CHANNEL: APPLE SEARCH ADS</div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:0 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <sc-for list="{{stats}}" as="s" hint-placeholder-count="3">
+      <div data-reveal style="background:#101d30;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:28px;opacity:0;transform:translateY(20px);">
+        <div data-counter style="font-size:32px;font-weight:800;color:#22c55e;margin-bottom:8px;">{{s.value}}</div>
+        <div style="font-size:12px;font-weight:700;color:#ffffff;letter-spacing:0.04em;line-height:1.5;">{{s.label}}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:80px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">THE SITUATION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The situation</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">The company I was working for decided to launch a mobile app. When I joined the project, the app itself wasn't ready yet, the development team was still building it.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">THE CHALLENGE</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The challenge</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">There was no product to promote yet. Spending on paid acquisition before there was an app to download would just have been burning budget with nothing to show for it. The pressure to "do something" was there, but the right move was to not spend anything yet.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">PREPARATION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">How I prepared before spending a euro</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Instead of putting money into the market too early, I used the waiting period to properly learn the channel. I took a dedicated Apple Search Ads course to understand budgeting, account structure, and the mechanics of how the platform actually works, rather than launching on assumptions once the app was ready.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">ACCOUNT STRUCTURE</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The account structure</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 24px;text-wrap:pretty;">Once the app was ready to launch, I built the account around four campaign types, based on keyword research done up front:</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:flex;gap:18px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#22c55e;">1</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">Branded campaigns</strong>, to protect the brand's own name in search</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:flex;gap:18px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#22c55e;">2</div>
+          <div>
+            <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0 0 8px;text-wrap:pretty;"><strong style="color:#0d1826;">Generic campaigns</strong>, split into:</p>
+            <div style="display:flex;flex-direction:column;gap:6px;padding-left:2px;">
+              <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:10px;"><span style="color:#22c55e;">·</span><span>Competitor terms</span></div>
+              <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:10px;"><span style="color:#22c55e;">·</span><span>Generic category terms relevant to the product</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:flex;gap:18px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#22c55e;">3</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">A placement based campaign</strong> (the exact Apple Search Ads campaign type name isn't confirmed here and needs a follow-up check before publishing)</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:flex;gap:18px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;color:#22c55e;">4</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">Discovery campaigns</strong>, used specifically as a keyword mining tool</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">STRATEGY</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The strategy: how the waterfall worked</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 24px;text-wrap:pretty;">The core of the approach was a waterfall between the discovery campaign and the generic campaigns.</p>
+      <div style="display:flex;flex-direction:column;gap:2px;border-left:2px solid #22c55e;padding-left:24px;">
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">MINE</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">The discovery campaign worked similarly to a dynamic search ads campaign: instead of targeting fixed keywords, it surfaced whatever relevant search terms were actually driving downloads. Those keywords were then reviewed, and the strongest performers were moved into the generic campaigns as dedicated, targeted keywords.</p>
+        </div>
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">PROMOTE, THEN EXCLUDE</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Once a keyword was promoted into a generic campaign, it was added back into the discovery campaign as a negative keyword. That stopped the discovery campaign from competing with the generic campaign over the same term, and forced it to keep surfacing new keyword opportunities instead of just repeating what already worked.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">MAINTAIN</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">This meant constant negative keyword maintenance, checking for overlap between campaigns and updating the negative lists, was the ongoing engine behind the account rather than a one time setup task.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RESULTS</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.25;">Results</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:22px;">
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">85K+ app installs</strong> delivered through this Apple Search Ads structure</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span>Account built from zero, with no prior paid app acquisition history to build on</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span>Segmented by device, country, and language to match how the app was actually being searched for and used</span></div>
+      </div>
+      <p style="font-size:15px;color:#6b788a;line-height:1.7;margin:0;font-style:italic;border-left:2px solid #d7ded9;padding-left:16px;text-wrap:pretty;">(Additional detail worth adding before this goes live: the specific timeframe over which the 85K+ installs were achieved, and any cost per install or efficiency benchmark, since neither was confirmed in this session.)</p>
+    </div>
+
+    <div style="background:#0d1826;border-radius:10px;padding:36px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;letter-spacing:0.06em;margin-bottom:12px;">WHAT THIS PROVES</div>
+      <h2 style="font-size:26px;font-weight:800;letter-spacing:-0.015em;color:#ffffff;margin:0 0 16px;line-height:1.25;">What this proves</h2>
+      <p style="font-size:17px;color:#b6c0cc;line-height:1.75;margin:0 0 18px;text-wrap:pretty;">The instinct when told to launch an app is to start spending on day one. Waiting instead, and using that time to genuinely learn the channel through a proper course rather than trial and error on a live budget, meant the account was structured correctly from the start instead of needing to be rebuilt later.</p>
+      <p style="font-size:17px;color:#b6c0cc;line-height:1.75;margin:0;text-wrap:pretty;">The waterfall structure itself is the more transferable lesson: a discovery or broad campaign isn't just a top of funnel play, it's a live keyword research engine, as long as negative keyword hygiene is maintained so it doesn't just end up competing with your own targeted campaigns.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RELATED SERVICES</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.3;">Related services</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 14px;text-wrap:pretty;">This work sits under <strong style="color:#0d1826;">App Growth</strong> within <a href="./Services.dc.html#industry-growth" style="font-weight:600;">Industry Growth</a>, supported by the core <a href="./Services.dc.html#performance-marketing" style="font-weight:600;">Performance Marketing</a> discipline used to structure and manage the campaigns.</p>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">See also: <a href="./CaseStudyDetail.dc.html" style="font-weight:600;">Google Ads revenue growth</a>, the same client's paid search work on a different channel.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">FAQ</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.3;">FAQ</h2>
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #d7ded9;">
+        <sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid #d7ded9;padding:22px 0;">
+            <div style="font-size:16px;font-weight:800;color:#0d1826;margin-bottom:10px;line-height:1.45;text-wrap:pretty;">{{f.q}}</div>
+            <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">{{f.a}}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <h2 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0;">Launching an app and need the acquisition side built?</h2>
+    <a href="./Contact.dc.html" style="background:#0d1826;color:#ffffff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Get in touch</a>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      stats: [
+        {value:'85K+', label:'APP INSTALLS DELIVERED'},
+        {value:'4', label:'CAMPAIGN TYPES BUILT FROM ZERO'},
+        {value:'3', label:'SEGMENTATION LAYERS: DEVICE, COUNTRY, LANGUAGE'},
+      ],
+      faqs: [
+        {q:'Should app store ad spend start before an app is fully built?', a:'No. Spending on paid acquisition before there\u2019s a product to download burns budget with nothing to show for it. The more effective use of that period is preparation, such as formal training on the ad platform\u2019s budgeting and account structure, so the account is built correctly once the app is ready to launch.'},
+        {q:'What is a discovery campaign in Apple Search Ads used for?', a:'It functions as a keyword mining tool, similar in principle to a dynamic search ads campaign. Instead of targeting fixed terms, it surfaces whatever relevant search terms are actually driving downloads, which can then be evaluated and promoted into more targeted campaigns.'},
+        {q:'Why add promoted keywords back as negative keywords in the discovery campaign?', a:'To prevent the discovery campaign from competing with the more targeted campaign over the same keyword. Without that step, the two campaigns would bid against each other instead of the discovery campaign continuing to surface new, untapped keyword opportunities, a structure often called a keyword waterfall.'},
+        {q:'How should an Apple Search Ads account be segmented?', a:'By device, country, and language, so campaigns match how an app is actually being searched for and used in each market, rather than running a single undifferentiated structure globally.'},
+        {q:'Is a keyword waterfall strategy a one time setup or an ongoing process?', a:'Ongoing. It only works if negative keywords are actively maintained and checked for overlap between campaigns on a continuing basis, rather than configured once and left alone.'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

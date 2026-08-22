@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Scaling Google Ads revenue from €4M to €6.9M | The Growth Files</title>
+<meta name="description" content="How a mapped, data led approach to Google Ads scaled a mobility marketplace client's paid media revenue 72% year over year, from an 11 day emergency sprint to a full year channel expansion." />
+<link rel="canonical" href="{SITE_URL}/case-studies/google-ads-revenue-growth" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="From €4M to €6.9M: scaling paid media revenue for a mobility marketplace" />
+<meta property="og:description" content="How a mapped, data led approach to Google Ads scaled a client's paid media revenue 72% year over year." />
+<meta property="og:url" content="{SITE_URL}/case-studies/google-ads-revenue-growth" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"{SITE_URL}/case-studies/google-ads-revenue-growth#article","headline":"From €4M to €6.9M: scaling paid media revenue for a mobility marketplace","description":"How a mapped, data led approach to Google Ads scaled a mobility marketplace client's paid media revenue 72% year over year, from an 11 day emergency sprint to a full year channel expansion.","author":{"@id":"{SITE_URL}/#person"},"mainEntityOfPage":"{SITE_URL}/case-studies/google-ads-revenue-growth","about":["Google Ads","Performance Marketing","Performance Max"]},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"{SITE_URL}/"},
+{"@type":"ListItem","position":2,"name":"Case studies","item":"{SITE_URL}/case-studies"},
+{"@type":"ListItem","position":3,"name":"Google Ads revenue growth"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does revenue growth in Google Ads always come from increasing total ad spend?","acceptedAnswer":{"@type":"Answer","text":"No. In this case, total revenue grew from €4M to €6.9M while the increase was driven by reallocating existing budget toward proven, high performing generic campaigns rather than simply increasing spend across the account. Segmenting performance by city, point of interest, and branded vs. generic identified where the real headroom was before any budget moved."}},
+{"@type":"Question","name":"What causes ROAS to drop during a rapid budget increase in Google Ads?","acceptedAnswer":{"@type":"Answer","text":"A sudden, large shift in budget disrupts what the bidding algorithm has already learned about an account, which typically causes short term efficiency compression while the algorithm relearns. This is a known, predictable effect and can be planned for rather than treated as a failure when it happens."}},
+{"@type":"Question","name":"Which campaign types support scaling a Google Ads account beyond search?","acceptedAnswer":{"@type":"Answer","text":"In this case, the account expanded from search only to search, display, and Performance Max, combined with new geographic coverage across additional cities, points of interest, and areas."}},
+{"@type":"Question","name":"How should budget be prioritized across multiple paid media channels?","acceptedAnswer":{"@type":"Answer","text":"By mapping performance across every channel in use, not just the largest one, and identifying which specific days and events consistently drive the most revenue, then pacing budget toward those periods dynamically instead of spreading spend evenly across the month."}},
+{"@type":"Question","name":"Can ROAS improve at the same time as ad spend scales?","acceptedAnswer":{"@type":"Answer","text":"Yes, when budget reallocation is based on evidence, city, point of interest, and area level performance and branded vs. generic segmentation, rather than increasing spend uniformly across an account. In this case, ROAS improved from 360% to 554% over the course of the scale up."}}]}
+]}
+</script>
+</helmet>
+<dc-import name="Header" active="CaseStudies" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:70px 48px 60px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <a href="./CaseStudies.dc.html" style="font-size:13px;color:#7d8b9a;">← All case studies</a>
+    <div style="margin-top:24px;">
+      <dc-import name="Eyebrow" label="CASE 001 · MOBILITY MARKETPLACE" hint-size="300,24"></dc-import>
+    </div>
+    <h1 style="font-size:46px;font-weight:800;letter-spacing:-0.025em;color:#ffffff;margin:20px 0 16px;max-width:900px;line-height:1.1;">From €4M to €6.9M: scaling paid media revenue for a mobility marketplace</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:680px;line-height:1.6;margin:0 0 16px;text-wrap:pretty;">A mapped, data led approach to Google Ads, from an 11 day emergency sprint to a full year channel expansion.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;letter-spacing:0.04em;">ROLE: PERFORMANCE MARKETING  |  CHANNELS: GOOGLE ADS · SEARCH · DISPLAY · PERFORMANCE MAX</div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:0 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+    <sc-for list="{{stats}}" as="s" hint-placeholder-count="4">
+      <div data-reveal style="background:#101d30;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:28px;opacity:0;transform:translateY(20px);">
+        <div data-counter style="font-size:32px;font-weight:800;color:#22c55e;margin-bottom:8px;">{{s.value}}</div>
+        <div style="font-size:12px;font-weight:700;color:#ffffff;letter-spacing:0.04em;line-height:1.5;">{{s.label}}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:80px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">THE SITUATION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The situation</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">I joined a European parking and mobility marketplace with prior experience running paid media for agencies serving US and Canadian clients. My mandate was straightforward: generate revenue. At the time, Google Ads, the company's main revenue channel, was managed by an external agency and wasn't performing anywhere near its potential.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">THE CHALLENGE</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The challenge: €90K, 11 days left</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 18px;text-wrap:pretty;">In my first month, the managing director gave me the situation directly: the company was behind on its annual targets, and with 11 days left in the year, we were still €90K short. He asked if I could close that gap.</p>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">This wasn't a strategy problem I could solve by "optimizing." It was a structural one. The account hadn't been segmented or analyzed in a way that showed where the real headroom was. Nobody could say, with evidence, which campaigns had room to scale and which didn't.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">DIAGNOSIS</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">How I diagnosed the problem</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 20px;text-wrap:pretty;">Before touching any budgets, I mapped the entire account:</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px;">
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">→</span><span>Performance by city, point of interest (POI), and area</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">→</span><span>Which campaigns had the highest conversion volume</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">→</span><span>Which campaigns had the strongest ROAS</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">→</span><span>Branded vs. generic performance, split out explicitly</span></div>
+      </div>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">This gave me an evidence base instead of a guess. Some campaigns had real scale headroom on the generic side, and branded campaigns had ROAS to spare without putting volume at risk.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">STRATEGY</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.25;">The strategy: insight, decision, action</h2>
+      <div style="display:flex;flex-direction:column;gap:2px;border-left:2px solid #22c55e;padding-left:24px;">
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">INSIGHT</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">the fastest path to €90K was reallocating budget toward top performing generic campaigns, while deliberately trading some ROAS on branded campaigns that had efficiency to give up.</p>
+        </div>
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">DECISION</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">I built three budget scenarios and took them to leadership with the trade-off stated plainly. A change this drastic, this fast, would very likely compress ROAS in the short term, because a sudden budget shift disrupts what the bidding algorithm has already learned. I wasn't going to sugarcoat that. If they wanted to move forward, it had to be an informed decision, not a surprise later.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">ACTION</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">leadership accepted the risk. I increased budget on the top performing generic campaigns and pulled budget (and ROAS target) down on branded. We hit the €90K target in under 11 days.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">EXECUTION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">Execution: from one sprint to a full year scale up</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 18px;text-wrap:pretty;">The sprint bought credibility, not closure. The week after, the question changed from "can you fix this" to "we want to grow, what's next?"</p>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 24px;text-wrap:pretty;">That answer took the rest of the year to build.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;margin-bottom:24px;">
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Channel mapping.</div>
+          <p style="font-size:15px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">I built a tracking system (starting in a spreadsheet) that mapped performance across every channel the company ran: affiliates, Google Ads, SEO, and others, not just Google Ads in isolation. This mattered because affiliates and other channels were actually generating more absolute revenue at the time. The growth story wasn't "the biggest channel got bigger," it was specifically about what Google Ads could do with the right structure.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Time and event based budget pacing.</div>
+          <p style="font-size:15px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">Instead of flat monthly budgets, I identified which days and events consistently drove the most revenue and shifted budget toward them dynamically, rather than spreading spend evenly across the month.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Format expansion.</div>
+          <p style="font-size:15px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">The account moved from search only to search, display, and Performance Max, adding formats where the earlier structure had none.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Geographic expansion.</div>
+          <p style="font-size:15px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">Coverage grew to new cities, POIs, and areas beyond the original footprint.</p>
+        </div>
+      </div>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">The growth from €4M to €6.9M in total revenue was driven primarily by this Google Ads expansion. Even though other channels carried a larger absolute share of revenue, Google Ads was the specific lever behind the year over year increase.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RESULTS</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.25;">Results</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">€6.9M</strong> in 2025 attributed revenue, up from <strong style="color:#0d1826;">€4M</strong> in 2024: <strong style="color:#0d1826;">72% year over year growth</strong></span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">ROAS improved from 360% to 554%</strong>, sustained while budget scaled, not traded away for volume</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">€90K delivered in under 11 days</strong> during the initial emergency sprint, proof the approach worked under real time pressure, not just in a planned rollout</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span>Channel mix expanded from search only to <strong style="color:#0d1826;">search, display, and Performance Max</strong></span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span>Geographic footprint expanded to new cities, POIs, and areas</span></div>
+      </div>
+    </div>
+
+    <div style="background:#0d1826;border-radius:10px;padding:36px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;letter-spacing:0.06em;margin-bottom:12px;">WHAT THIS PROVES</div>
+      <h2 style="font-size:26px;font-weight:800;letter-spacing:-0.015em;color:#ffffff;margin:0 0 16px;line-height:1.25;">What this proves</h2>
+      <p style="font-size:17px;color:#b6c0cc;line-height:1.75;margin:0 0 18px;text-wrap:pretty;">Under time pressure, the instinct is to increase spend broadly and hope the algorithm sorts it out. That's not what worked here. What worked was segmenting performance data first, by geography, campaign type, and branded vs. generic, so the budget reallocation targeted where headroom actually existed, and being transparent with leadership about the real trade-off (short term ROAS compression) before acting, not after.</p>
+      <p style="font-size:17px;color:#b6c0cc;line-height:1.75;margin:0;text-wrap:pretty;">The longer term scale up followed the same logic: map the full channel picture before assuming the answer is "spend more everywhere," then let the data show where the actual growth lever is. In this case, that was Google Ads, even though it wasn't the largest revenue channel by volume.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RELATED SERVICES</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.3;">Related services</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 14px;text-wrap:pretty;">This work sits under <a href="./Services.dc.html#performance-marketing" style="font-weight:600;">Performance Marketing</a>: campaign structure, budget allocation, and channel scaling, supported by the <a href="./Services.dc.html#analytics-data" style="font-weight:600;">Analytics &amp; Data</a> discipline used to build the channel mapping system behind the year long growth.</p>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">See also: <a href="./CaseStudies.dc.html" style="font-weight:600;">Microsoft Ads expansion</a>, the same client's second acquisition channel, built from zero.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">FAQ</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.3;">FAQ</h2>
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #d7ded9;">
+        <sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid #d7ded9;padding:22px 0;">
+            <div style="font-size:16px;font-weight:800;color:#0d1826;margin-bottom:10px;line-height:1.45;text-wrap:pretty;">{{f.q}}</div>
+            <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">{{f.a}}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <h2 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0;">Want results like this on your account?</h2>
+    <a href="./Contact.dc.html" style="background:#0d1826;color:#ffffff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Get in touch</a>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      stats: [
+        {value:'€6.9M', label:'2025 ATTRIBUTED REVENUE'},
+        {value:'72%', label:'YoY REVENUE GROWTH'},
+        {value:'554%', label:'ROAS, UP FROM 360%'},
+        {value:'€90K', label:'CLOSED IN UNDER 11 DAYS'},
+      ],
+      faqs: [
+        {q:'Does revenue growth in Google Ads always come from increasing total ad spend?', a:'No. In this case, total revenue grew from €4M to €6.9M while the increase was driven by reallocating existing budget toward proven, high performing generic campaigns rather than simply increasing spend across the account. Segmenting performance by city, point of interest, and branded vs. generic identified where the real headroom was before any budget moved.'},
+        {q:'What causes ROAS to drop during a rapid budget increase in Google Ads?', a:'A sudden, large shift in budget disrupts what the bidding algorithm has already learned about an account, which typically causes short term efficiency compression while the algorithm relearns. This is a known, predictable effect and can be planned for rather than treated as a failure when it happens.'},
+        {q:'Which campaign types support scaling a Google Ads account beyond search?', a:'In this case, the account expanded from search only to search, display, and Performance Max, combined with new geographic coverage across additional cities, points of interest, and areas.'},
+        {q:'How should budget be prioritized across multiple paid media channels?', a:'By mapping performance across every channel in use, not just the largest one, and identifying which specific days and events consistently drive the most revenue, then pacing budget toward those periods dynamically instead of spreading spend evenly across the month.'},
+        {q:'Can ROAS improve at the same time as ad spend scales?', a:'Yes, when budget reallocation is based on evidence, city, point of interest, and area level performance and branded vs. generic segmentation, rather than increasing spend uniformly across an account. In this case, ROAS improved from 360% to 554% over the course of the scale up.'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

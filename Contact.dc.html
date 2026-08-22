@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+  input, textarea { font-family: 'Inter', sans-serif; }
+</style>
+</helmet>
+<dc-import name="Header" active="Contact" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:90px 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;">
+    <div>
+      <dc-import name="Eyebrow" label="GET IN TOUCH" hint-size="220,24"></dc-import>
+      <h1 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:#ffffff;margin:24px 0 20px;">Open to the right opportunities.</h1>
+      <p style="font-size:16px;color:#b6c0cc;max-width:460px;line-height:1.6;">Available for freelance projects, consulting and full-time performance marketing roles based in Amsterdam.</p>
+    </div>
+    <div style="background:#101d30;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:32px;font-family:'IBM Plex Mono',monospace;font-size:13px;">
+      <div style="color:#7d8b9a;margin-bottom:16px;">contact-manifest.json</div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:#22c55e;">"location"</span><span style="color:#e2e8f0;">"Amsterdam, NL"</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:#22c55e;">"availability"</span><span style="color:#e2e8f0;">["freelance","consulting","full-time"]</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;"><span style="color:#22c55e;">"focus"</span><span style="color:#e2e8f0;">["performance","AI Search","growth"]</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;"><span style="color:#22c55e;">"workingModel"</span><span style="color:#e2e8f0;">"hybrid / Amsterdam-based"</span></div>
+        <div style="color:#22c55e;">"status": <span style="color:#e2e8f0;">"open"</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:80px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="START A CONVERSATION" hint-size="220,24"></dc-import>
+    <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 12px;">Tell me what you're working on.</h2>
+    <p style="font-size:15px;color:#5a6672;margin:0 0 44px;">Share the challenge, current situation and the outcome you want to achieve.</p>
+
+    <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:60px;">
+      <div>
+        <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+          <div style="background:#dcf5e3;border-radius:8px;padding:24px;font-size:15px;color:#14532d;font-weight:600;">Message sent. I'll get back to you shortly.</div>
+        </sc-if>
+        <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+          <div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+              <div>
+                <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:8px;">YOUR NAME</div>
+                <input type="text" placeholder="Your full name" style="width:100%;box-sizing:border-box;padding:13px 14px;border-radius:6px;border:1px solid rgba(13,24,38,0.15);background:#ffffff;font-size:14px;" />
+              </div>
+              <div>
+                <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:8px;">EMAIL</div>
+                <input type="email" placeholder="you@company.com" style="width:100%;box-sizing:border-box;padding:13px 14px;border-radius:6px;border:1px solid rgba(13,24,38,0.15);background:#ffffff;font-size:14px;" />
+              </div>
+            </div>
+            <div style="margin-bottom:20px;">
+              <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:8px;">COMPANY (OPTIONAL)</div>
+              <input type="text" placeholder="Company or organisation" style="width:100%;box-sizing:border-box;padding:13px 14px;border-radius:6px;border:1px solid rgba(13,24,38,0.15);background:#ffffff;font-size:14px;" />
+            </div>
+            <div style="margin-bottom:20px;">
+              <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:8px;">SUBJECT</div>
+              <input type="text" placeholder="What would you like to discuss?" style="width:100%;box-sizing:border-box;padding:13px 14px;border-radius:6px;border:1px solid rgba(13,24,38,0.15);background:#ffffff;font-size:14px;" />
+            </div>
+            <div style="margin-bottom:24px;">
+              <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:8px;">MESSAGE</div>
+              <textarea placeholder="Tell me about the project, role or challenge" rows="5" style="width:100%;box-sizing:border-box;padding:13px 14px;border-radius:6px;border:1px solid rgba(13,24,38,0.15);background:#ffffff;font-size:14px;resize:vertical;"></textarea>
+            </div>
+            <div style="margin-bottom:28px;">
+              <div style="font-size:12px;font-weight:700;color:#0d1826;letter-spacing:0.04em;margin-bottom:10px;">WHAT BEST DESCRIBES THIS?</div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <sc-for list="{{options}}" as="opt" hint-placeholder-count="4">
+                  <div onClick="{{selectOption}}" data-key="{{opt.key}}" style="cursor:pointer;padding:11px 18px;border-radius:6px;font-size:13px;font-weight:600;background:{{opt.bg}};color:{{opt.color}};border:1px solid {{opt.border}};transition:transform 0.15s ease;" style-hover="transform:translateY(-2px);">{{opt.label}}</div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px;">
+              <div onClick="{{send}}" style="cursor:pointer;background:#22c55e;color:#0d1826;padding:13px 26px;border-radius:6px;font-weight:700;font-size:14px;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Send a message</div>
+              <div style="font-size:13px;color:#8a96a3;">No pitch deck required. A clear description is enough.</div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <div data-reveal style="border-left:1px solid rgba(13,24,38,0.1);padding-left:44px;opacity:0;transform:translateY(20px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:24px;">DIRECT CONTACT</div>
+        <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(13,24,38,0.08);">
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.04em;margin-bottom:6px;">EMAIL</div>
+          <div style="font-size:15px;font-weight:700;color:#0d1826;">benavidesorling@gmail.com</div>
+        </div>
+        <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(13,24,38,0.08);">
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.04em;margin-bottom:6px;">PHONE</div>
+          <div style="font-size:15px;font-weight:700;color:#0d1826;">+31 6 28022153</div>
+        </div>
+        <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(13,24,38,0.08);">
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.04em;margin-bottom:6px;">LOCATION</div>
+          <div style="font-size:15px;font-weight:700;color:#0d1826;">Amsterdam, The Netherlands</div>
+        </div>
+        <div style="margin-bottom:28px;">
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.04em;margin-bottom:6px;">LINKEDIN</div>
+          <div style="font-size:15px;font-weight:700;color:#0d1826;">linkedin.com/in/benavideesf1b4</div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:16px;">AVAILABLE FOR</div>
+        <div style="font-size:14px;color:#3d4a5a;line-height:2;">
+          <div>• Freelance performance marketing projects</div>
+          <div>• Growth and AI Search consulting</div>
+          <div>• Full-time performance marketing roles</div>
+          <div>• Hybrid roles based in Amsterdam</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:44px;background:#dcf5e3;border-radius:8px;padding:22px 28px;display:flex;gap:20px;align-items:flex-start;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#14532d;letter-spacing:0.06em;white-space:nowrap;">WHAT HELPS</div>
+      <div style="font-size:14px;font-weight:600;color:#14532d;line-height:1.6;">Your goal, current channels, approximate timeline and the main problem you want to solve.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:70px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <div>
+      <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0 0 12px;">A clear conversation is<br />the best first step.</h2>
+      <p style="font-size:15px;color:#0d1826;opacity:0.8;margin:0;">Bring the context. We'll figure out the next move from there.</p>
+    </div>
+    <div style="background:#0d1826;border-radius:8px;padding:22px 28px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#22c55e;letter-spacing:0.06em;margin-bottom:8px;">EMAIL</div>
+      <div style="font-size:16px;font-weight:700;color:#ffffff;margin-bottom:4px;">benavidesorling@gmail.com</div>
+      <div style="font-size:13px;color:#8a96a3;">Amsterdam, The Netherlands</div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { selectedOption: null, sent: false };
+  componentDidMount() {
+    import('./motion.js').then(m => { m.initAll(); m.initScrollProgress(); });
+  }
+
+  selectOption = (e) => this.setState({ selectedOption: e.currentTarget.getAttribute('data-key') });
+  send = () => this.setState({ sent: true });
+
+  renderVals() {
+    const defs = [
+      {key:'freelance', label:'Freelance project'},
+      {key:'consulting', label:'Consulting'},
+      {key:'fulltime', label:'Full-time role'},
+      {key:'other', label:'Something else'},
+    ];
+    const options = defs.map(o => ({
+      ...o,
+      bg: this.state.selectedOption === o.key ? '#22c55e' : '#ffffff',
+      color: '#0d1826',
+      border: this.state.selectedOption === o.key ? '#22c55e' : 'rgba(13,24,38,0.15)',
+    }));
+    return { options, sent: this.state.sent, notSent: !this.state.sent };
+  }
+}
+
+</script>
+</body>
+</html>

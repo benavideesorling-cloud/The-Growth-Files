@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0d1826; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+</helmet>
+<dc-import name="Header" active="CaseStudies" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:90px 48px 60px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="CASE STUDIES" hint-size="220,24"></dc-import>
+    <h1 style="font-size:48px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;margin:24px 0 16px;">Real campaigns.<br />Documented results.</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:620px;line-height:1.6;">Five growth programs. Clear context, decisions and measurable outcomes. Each case study explains what changed, why it mattered and what came next.</p>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:0 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
+    <sc-for list="{{cases}}" as="c" hint-placeholder-count="5">
+      <div data-reveal style="background:#101d30;border-left:3px solid #22c55e;border-radius:8px;padding:36px;display:grid;grid-template-columns:1.6fr 1fr;gap:32px;opacity:0;transform:translateY(20px);transition:transform 0.25s ease,box-shadow 0.25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 16px 32px rgba(0,0,0,0.25);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;margin-bottom:12px;">{{c.tag}}</div>
+          <div style="font-size:24px;font-weight:700;color:#ffffff;margin-bottom:12px;">{{c.title}}</div>
+          <div style="font-size:15px;color:#8a96a3;line-height:1.6;margin-bottom:18px;">{{c.desc}}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;margin-bottom:18px;">{{c.meta}}</div>
+          <a href="{{c.href}}" style="font-size:13px;font-weight:700;color:#22c55e;letter-spacing:0.04em;">OPEN CASE STUDY →</a>
+        </div>
+        <div style="background:#15263d;border-radius:8px;padding:28px;">
+          <div data-counter style="font-size:38px;font-weight:800;color:#22c55e;margin-bottom:8px;">{{c.stat}}</div>
+          <div style="font-size:12px;font-weight:700;color:#ffffff;letter-spacing:0.04em;margin-bottom:14px;">{{c.statLabel}}</div>
+          <div style="height:1px;background:rgba(255,255,255,0.1);margin-bottom:14px;"></div>
+          <div style="font-size:13px;color:#8a96a3;line-height:1.5;">{{c.statSub}}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:70px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 0.8fr;gap:32px;">
+    <div>
+      <dc-import name="Eyebrow" label="LET'S GET IN TOUCH" hint-size="220,24"></dc-import>
+      <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 16px;">Let's build something<br />that actually works.</h2>
+      <p style="font-size:15px;color:#0d1826;opacity:0.8;margin:0 0 24px;max-width:420px;">Available for freelance projects, consulting and performance marketing roles.</p>
+      <a href="./Contact.dc.html" style="display:inline-block;background:#0d1826;color:#ffffff;padding:13px 26px;border-radius:6px;font-weight:700;font-size:14px;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Get in touch</a>
+    </div>
+    <div style="font-size:14px;font-weight:700;color:#0d1826;line-height:2.2;">
+      <div>benavidesorling@gmail.com</div>
+      <div>+31 6 28022153</div>
+      <div>Amsterdam, The Netherlands</div>
+      <div>linkedin.com/in/benavideesf1b4</div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#0d1826;margin-bottom:10px;">Available for:</div>
+      <div style="font-size:14px;color:#0d1826;line-height:2;">
+        <div>• Freelance projects</div>
+        <div>• Consulting</div>
+        <div>• Performance marketing roles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      cases: [
+        {tag:'CASE 001 · MOBILITY MARKETPLACE', title:'Revenue growth: €4M → €6.9M', desc:'Mapped the account by city, POI and branded vs. generic, then reallocated budget where the headroom actually was.', meta:'CHANNEL: GOOGLE ADS  |  FORMATS: SEARCH · DISPLAY · PERFORMANCE MAX', stat:'€6.9M', statLabel:'2025 ATTRIBUTED REVENUE', statSub:'72% YoY growth · ROAS improved from 360% to 554%', href:'./CaseStudyDetail.dc.html'},
+        {tag:'CASE 002 · AI VISIBILITY', title:'From invisible to citable', desc:'Audited AI referral data across Copilot, ChatGPT and Perplexity, then built content, trust and technical foundations against what it showed.', meta:'DISCIPLINE: AI SEARCH & SEO  |  SURFACES: CHATGPT · COPILOT · PERPLEXITY', stat:'500+', statLabel:'MONTHLY AI CITATIONS', statSub:'20% Share of Authority · six AI-structured posts in one month', href:'./CaseStudyDetail002.dc.html'},
+        {tag:'CASE 003 · APP GROWTH', title:'App growth: 0 → 85K+ installs', desc:'Built an Apple Search Ads program from zero, with a discovery-to-generic keyword waterfall as the engine.', meta:'CHANNEL: APPLE SEARCH ADS  |  SEGMENTED BY: DEVICE · COUNTRY · LANGUAGE', stat:'85K+', statLabel:'APP INSTALLS', statSub:'Four campaign types built before a euro was spent', href:'./CaseStudyDetail003.dc.html'},
+        {tag:'CASE 004 · CHANNEL EXPANSION', title:'Microsoft Ads: unmanaged spend to €295K', desc:'Fixed access and tracking on a neglected account, then imported proven Google Ads campaigns instead of rebuilding.', meta:'CHANNEL: MICROSOFT ADS  |  METHOD: IMPORT, DO NOT REBUILD', stat:'€295K', statLabel:'ATTRIBUTED REVENUE', statSub:'Sustained 400–580% ROAS · ~15 proven campaigns imported', href:'./CaseStudyDetail004.dc.html'},
+        {tag:'CASE 005 · B2B SOCIAL', title:'Global B2B social reach across four brands', desc:'Organic and paid social on LinkedIn and Instagram, using engagement and follow rate as the one comparable signal.', meta:'REGIONS: AMERICAS · EUROPE · ASIA  |  STATUS: ACTIVE', stat:'24.4M+', statLabel:'COMBINED IMPRESSIONS, 28 DAYS', statSub:'3,920+ new followers · four umbrella brands, three continents', href:'./CaseStudyDetail005.dc.html'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

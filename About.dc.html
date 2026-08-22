@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+</helmet>
+<dc-import name="Header" active="About" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:90px 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:680px;">
+    <dc-import name="Eyebrow" label="ABOUT" hint-size="220,24"></dc-import>
+    <h1 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:#ffffff;margin:24px 0;">Not just one tool.<br>A connected growth discipline.</h1>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;gap:12px;font-size:15px;color:#cbd5e1;line-height:1.6;"><span style="color:#22c55e;">✓</span>I combine strategy, paid media, AI Search and analytics into one connected growth system.</div>
+      <div style="display:flex;gap:12px;font-size:15px;color:#cbd5e1;line-height:1.6;"><span style="color:#22c55e;">✓</span>That means fewer handoffs, clearer decisions and stronger performance across B2B, B2C, e-commerce, marketplaces and apps.</div>
+      <div style="display:flex;gap:12px;font-size:15px;color:#cbd5e1;line-height:1.6;"><span style="color:#22c55e;">✓</span>The goal is simple: turn visibility, data and creative into measurable growth.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0c1622;padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;">
+    <sc-for list="{{stats}}" as="stat" hint-placeholder-count="5">
+      <div data-reveal style="display:flex;gap:16px;opacity:0;transform:translateY(20px);">
+        <div style="width:2px;background:#22c55e;"></div>
+        <div>
+          <div data-counter style="font-size:30px;font-weight:800;color:#22c55e;">{{stat.value}}</div>
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.05em;margin-top:6px;font-family:'IBM Plex Mono',monospace;">{{stat.label}}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f7f8f7;padding:90px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:60px;">
+    <div>
+      <dc-import name="Eyebrow" label="MY STORY" hint-size="220,24"></dc-import>
+      <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;line-height:1.2;margin:20px 0 32px;">Built across disciplines. Connected as one system.</h2>
+      <div data-reveal style="background:#dcf5e3;border-radius:8px;padding:24px;opacity:0;transform:translateY(20px);">
+        <div style="font-size:24px;color:#166534;margin-bottom:8px;">"</div>
+        <div style="font-size:17px;font-weight:600;color:#14532d;line-height:1.5;">I believe in owning the outcome: connecting strategy, creative, media and reporting so every euro has a clear role.</div>
+      </div>
+    </div>
+    <div>
+      <sc-for list="{{story}}" as="s" hint-placeholder-count="6">
+        <div data-reveal style="display:flex;gap:20px;padding-bottom:26px;opacity:0;">
+          <div style="display:flex;flex-direction:column;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:50%;background:#dcf5e3;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;">{{s.icon}}</div>
+            <div style="width:2px;height:24px;background:#d7ded9;margin-top:6px;"></div>
+          </div>
+          <div>
+            <div style="font-size:17px;font-weight:700;color:#0d1826;margin-bottom:6px;">{{s.title}}</div>
+            <div style="font-size:14px;color:#5a6672;line-height:1.6;">{{s.desc}}</div>
+          </div>
+        </div>
+      </sc-for>
+      <div data-reveal style="background:#dcf5e3;border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;opacity:0;transform:translateY(20px);">
+        <span style="color:#16a34a;font-size:16px;">★</span>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#14532d;margin-bottom:4px;">The realization.</div>
+          <div style="font-size:14px;color:#166534;line-height:1.6;">It is not about specializing. It is about building a connected growth discipline where every piece reinforces the next.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:0 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="THE JOURNEY" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 44px;">From foundations to systems thinking.</h2>
+    <div style="position:relative;display:flex;justify-content:space-between;margin-bottom:56px;">
+      <div style="position:absolute;top:18px;left:0;right:0;height:2px;background:#d7ded9;"></div>
+      <sc-for list="{{journey}}" as="j" hint-placeholder-count="7">
+        <div data-reveal style="position:relative;flex:1;text-align:center;padding:0 6px;opacity:0;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#f2f4f2;border:2px solid #22c55e;color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:14px;margin:0 auto 14px;position:relative;z-index:1;">{{j.icon}}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#16a34a;letter-spacing:0.04em;margin-bottom:6px;">{{j.date}}</div>
+          <div style="font-size:14px;font-weight:700;color:#0d1826;margin-bottom:6px;">{{j.title}}</div>
+          <div style="font-size:12px;color:#5a6672;line-height:1.5;">{{j.desc}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:90px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="HOW I WORK" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;margin:20px 0 44px;">Every tool. Every channel. One goal.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{disciplines}}" as="d" hint-placeholder-count="6">
+        <div data-reveal style="background:#15263d;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:24px;opacity:0;transform:translateY(20px);transition:transform 0.25s ease,border-color 0.25s ease,background 0.25s ease;" style-hover="transform:translateY(-4px);border-color:#22c55e;background:#16281f;">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(34,197,94,0.12);color:#22c55e;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:16px;">{{d.icon}}</div>
+          <div style="font-size:16px;font-weight:700;color:#ffffff;margin-bottom:8px;">{{d.title}}</div>
+          <div style="font-size:14px;color:#8a96a3;line-height:1.5;">{{d.desc}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <div>
+      <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0 0 12px;">Let's build something<br>that actually works.</h2>
+      <p style="font-size:15px;color:#0d1826;opacity:0.8;margin:0 0 20px;">If you're serious about growth, let's talk about your goals and how we can reach them — together.</p>
+      <a href="./Contact.dc.html" style="display:inline-block;background:#0d1826;color:#ffffff;padding:13px 26px;border-radius:6px;font-weight:700;font-size:14px;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Come in contact</a>
+    </div>
+    <div style="text-align:right;font-size:14px;font-weight:700;color:#0d1826;line-height:1.9;">
+      <div>benavidesorling@gmail.com</div>
+      <div>+31 6 28022153</div>
+      <div>Amsterdam, The Netherlands</div>
+      <div>linkedin.com/in/benavideesf1b4</div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+<div style="font-size: 16px; line-height: 1; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; position: absolute; left: 123px; top: 20px">Your text here</div></x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      stats: [
+        {value:'6+', label:'YEARS EXPERIENCE'},
+        {value:'€1.3M+', label:'AD SPEND MANAGED'},
+        {value:'€6.9M+', label:'REVENUE GENERATED'},
+        {value:'554%', label:'PEAK ROAS'},
+        {value:'250+', label:'WEEKLY AI CITATIONS'},
+      ],
+      story: [
+        {icon:'✎', title:'I started with design.', desc:'I learned Illustrator, Photoshop and After Effects by watching YouTube videos. Today, Figma is the tool I use most.'},
+        {icon:'↗', title:'Then I moved into paid media.', desc:'Google Ads became the gateway into performance marketing and measurable growth.'},
+        {icon:'▥', title:'Then I fell in love with analytics.', desc:'Tracking, dashboards and attribution made every click easier to understand.'},
+        {icon:'↔', title:'Then I worked on B2C and B2B strategy.', desc:'Different models, different cycles — same goal: sustainable growth.'},
+        {icon:'▤', title:'Then I stepped into app marketing and Google Maps location management.', desc:'Acquisition, retention and lifecycle growth that lives inside the product, plus managing presence across local search.'},
+        {icon:'⌕', title:'And now, AI Search and website optimisation.', desc:'Understanding how visibility is changing, and how brands can win in the next search era.'},
+      ],
+      journey: [
+        {icon:'✎', date:'FOUNDATION', title:'Design foundations', desc:'Self-taught in Illustrator, Photoshop and After Effects.'},
+        {icon:'🎓', date:'2019', title:'BA Business Administration', desc:'Marketing · Magna Cum Laude.'},
+        {icon:'↗', date:'NOV 2022–JUN 2023', title:'RocketBarn', desc:'Media strategy across B2B, B2C and lead generation.'},
+        {icon:'◆', date:'2023', title:'MSc Marketing', desc:'Vrije Universiteit Amsterdam · AI advertising research.'},
+        {icon:'S', date:'SEP–DEC 2023', title:'SUPS Care', desc:'Growth Marketer.'},
+        {icon:'P', date:'JAN 2024–JAN 2026', title:'ParkBee', desc:'Performance marketing at scale across markets and apps.'},
+        {icon:'⌕', date:'FEB 2026–PRESENT', title:'Refreshworks.ai', desc:'AI Search, paid media, SEO, CRM and growth strategy.'},
+      ],
+      disciplines: [
+        {icon:'◎', title:'Strategy', desc:'Roadmaps, positioning and growth systems built for scale.'},
+        {icon:'↗', title:'Performance Marketing', desc:'Full-funnel paid media across search, social, apps and marketplaces.'},
+        {icon:'⌕', title:'AI Search & SEO', desc:'Visibility, technical SEO, content architecture and AI-ready pages.'},
+        {icon:'▥', title:'Analytics & Data', desc:'Tracking, dashboards and insights that drive better decisions.'},
+        {icon:'⬈', title:'Industry Growth', desc:'B2B, B2C, e-commerce, marketplaces and app marketing.'},
+        {icon:'✎', title:'Creative & Content', desc:'Landing pages, CRO, copy and visual storytelling.'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

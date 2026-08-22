@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+</helmet>
+<dc-import name="Header" active="Blog" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:90px 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="FIELD NOTES" hint-size="220,24"></dc-import>
+    <h1 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:#ffffff;margin:24px 0 20px;max-width:700px;">Writing about AI, paid media and the unglamorous work of growth.</h1>
+    <p style="font-size:16px;color:#b6c0cc;max-width:600px;line-height:1.6;">Practical frameworks, experiments and postmortems from running performance marketing, AI Search, SEO and analytics across real businesses.</p>
+  </div>
+</section>
+
+<section style="background:#f8f9f8;padding:28px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#5a6672;letter-spacing:0.06em;">FILTER</div>
+    <sc-for list="{{filters}}" as="f" hint-placeholder-count="6">
+      <div onClick="{{selectFilter}}" data-key="{{f.key}}" style="cursor:pointer;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:700;background:{{f.bg}};color:{{f.color}};border:1px solid {{f.border}};transition:transform 0.15s ease;" style-hover="transform:translateY(-2px);">{{f.label}}</div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f8f9f8;padding:50px 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="FEATURED NOTE" hint-size="220,24"></dc-import>
+    <a href="./BlogPost.dc.html?p=ai-search-optimization-explained" style="text-decoration:none;margin-top:24px;background:#ffffff;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:0.9fr 1.1fr;box-shadow:0 1px 3px rgba(0,0,0,0.06);transition:transform 0.25s ease,box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.1);">
+      <div style="background:#101d30;padding:36px;color:#22c55e;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:48px;font-weight:700;margin-bottom:16px;">01</div>
+        <div style="font-size:15px;font-weight:700;color:#ffffff;letter-spacing:0.02em;margin-bottom:24px;">AI SEARCH<br />OPTIMIZATION</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:11px;">
+          <div style="display:flex;justify-content:space-between;"><span>CONTENT</span><span style="color:#7d8b9a;">EXTRACTABLE</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>TRUST</span><span style="color:#7d8b9a;">VERIFIABLE</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>TECHNICAL</span><span style="color:#7d8b9a;">PARSEABLE</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>SURFACES</span><span style="color:#7d8b9a;">4 PLATFORMS</span></div>
+        </div>
+      </div>
+      <div style="padding:40px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.04em;margin-bottom:14px;">START HERE · AI SEARCH</div>
+        <div style="font-size:26px;font-weight:800;letter-spacing:-0.01em;color:#0d1826;line-height:1.3;margin-bottom:14px;">AI search optimization, explained</div>
+        <div style="font-size:15px;color:#5a6672;line-height:1.6;margin-bottom:20px;text-wrap:pretty;">What it actually involves, how it differs from traditional SEO, and why most AI answers cite only a handful of sources.</div>
+        <div style="font-size:13px;color:#8a96a3;margin-bottom:22px;">Aug 18, 2026 · 7 min read</div>
+        <div style="display:inline-block;background:#0d1826;color:#ffffff;padding:12px 22px;border-radius:6px;font-weight:700;font-size:14px;">Read field note</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section style="background:#f8f9f8;padding:0 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="LATEST NOTES" hint-size="220,24"></dc-import>
+    <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 40px;">Frameworks, experiments and postmortems.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{visiblePosts}}" as="p" hint-placeholder-count="6">
+        <a href="{{p.href}}" style="text-decoration:none;display:block;background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid transparent;transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.1);border-color:#22c55e;--num-color:#22c55e;">
+          <div style="height:140px;background:#101d30;padding:22px;font-family:'IBM Plex Mono',monospace;font-size:38px;color:var(--num-color,#243a56);font-weight:700;transition:color 0.25s ease;">{{p.num}}</div>
+          <div style="padding:22px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#16a34a;letter-spacing:0.06em;margin-bottom:10px;">{{p.tag}}</div>
+            <div style="font-size:17px;font-weight:700;color:#0d1826;line-height:1.4;margin-bottom:10px;">{{p.title}}</div>
+            <div style="font-size:13px;color:#5a6672;line-height:1.5;margin-bottom:14px;text-wrap:pretty;">{{p.desc}}</div>
+            <div style="font-size:12px;color:#8a96a3;">{{p.date}}</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:56px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#22c55e;letter-spacing:0.06em;margin-bottom:10px;">NOTES, NOT NOISE.</div>
+      <div style="font-size:26px;font-weight:800;color:#ffffff;margin-bottom:8px;">Get the useful ones by email.</div>
+      <div style="font-size:14px;color:#8a96a3;">Occasional field notes on AI Search, paid media, analytics and growth systems.</div>
+    </div>
+    <div style="display:flex;gap:10px;">
+      <input type="text" placeholder="Email address" value="{{email}}" onChange="{{setEmail}}" style="padding:13px 16px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:#15263d;color:#ffffff;font-size:14px;width:240px;" />
+      <div onClick="{{subscribe}}" style="cursor:pointer;background:#22c55e;color:#0d1826;padding:13px 24px;border-radius:6px;font-weight:700;font-size:14px;white-space:nowrap;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">{{subscribeLabel}}</div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeFilter: 'all', email: '', subscribed: false };
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+
+  selectFilter = (e) => {
+    const key = e.currentTarget.getAttribute('data-key');
+    this.setState({ activeFilter: key });
+  };
+
+  setEmail = (e) => this.setState({ email: e.target.value });
+
+  subscribe = () => {
+    if (!this.state.subscribed) this.setState({ subscribed: true });
+  };
+
+  renderVals() {
+    const filterDefs = [
+      {key:'all', label:'ALL NOTES'},
+      {key:'ai search', label:'AI SEARCH'},
+      {key:'aeo & geo', label:'AEO & GEO'},
+      {key:'technical', label:'TECHNICAL'},
+      {key:'measurement', label:'MEASUREMENT'},
+      {key:'working with me', label:'WORKING WITH ME'},
+    ];
+    const filters = filterDefs.map(f => ({
+      ...f,
+      bg: this.state.activeFilter === f.key ? '#22c55e' : '#ffffff',
+      color: this.state.activeFilter === f.key ? '#0d1826' : '#0d1826',
+      border: this.state.activeFilter === f.key ? '#22c55e' : 'rgba(13,24,38,0.12)',
+    }));
+
+    const posts = [
+      {num:'02', slug:'what-is-aeo-vs-seo', tag:'AEO & GEO', title:'What is AEO, and how is it different from SEO?', desc:'AEO targets selection inside an answer the AI writes, before anyone sees a list of links.', date:'Aug 14, 2026 · 6 min read'},
+      {num:'03', slug:'what-is-geo-vs-aeo', tag:'AEO & GEO', title:'What is GEO, and how is it different from AEO?', desc:'GEO is the umbrella discipline. AEO is one operational piece of it. Where the line sits.', date:'Aug 11, 2026 · 5 min read'},
+      {num:'04', slug:'seo-vs-aeo-vs-geo', tag:'AEO & GEO', title:'SEO vs AEO vs GEO: a side by side comparison', desc:'Three disciplines, three different outcomes. Where they overlap and where they diverge.', date:'Aug 7, 2026 · 7 min read'},
+      {num:'05', slug:'how-to-structure-content-for-ai-citation', tag:'AI SEARCH', title:'How to structure content so AI search engines actually cite it', desc:'Answer-first paragraphs, question-based headings, named sources, and what differs by platform.', date:'Aug 4, 2026 · 8 min read'},
+      {num:'06', slug:'structured-data-and-llms-txt', tag:'TECHNICAL', title:'What is llms.txt, and do I need one?', desc:'What Google has actually confirmed about llms.txt, and what to prioritise instead.', date:'Jul 31, 2026 · 7 min read'},
+      {num:'07', slug:'faq-schema-ai-visibility', tag:'TECHNICAL', title:"What's FAQ schema, and does it still help AI visibility?", desc:'Google retired FAQ rich results in May 2026. What that changed, and what it did not.', date:'Jul 28, 2026 · 6 min read'},
+      {num:'08', slug:'check-track-ai-brand-visibility', tag:'MEASUREMENT', title:'How do I check and track whether AI systems know my brand?', desc:'Manual prompt auditing, then GA4 setup that captures what the native AI channel misses.', date:'Jul 24, 2026 · 7 min read'},
+      {num:'09', slug:'aeo-for-b2b-companies', tag:'AI SEARCH', title:'Does AEO matter for B2B companies?', desc:'What the 2026 Semrush, G2 and Forrester buyer research actually shows.', date:'Jul 21, 2026 · 6 min read'},
+      {num:'10', slug:'is-geo-the-future-of-seo', tag:'AEO & GEO', title:'Is GEO the future of SEO, and will AI search replace Google?', desc:'A real shift in share, not the end of search. What the numbers support.', date:'Jul 17, 2026 · 7 min read'},
+      {num:'11', slug:'cost-of-ai-search-optimization', tag:'WORKING WITH ME', title:'How much does AI search optimization cost?', desc:'Published 2026 ranges, what actually moves the number, and one useful warning sign.', date:'Jul 14, 2026 · 6 min read'},
+      {num:'12', slug:'seo-agency-vs-aeo-specialist', tag:'WORKING WITH ME', title:'Do I need an SEO agency or an AEO specialist?', desc:'Why splitting the two usually backfires, and what to check before hiring anyone.', date:'Jul 10, 2026 · 7 min read'},
+    ].map(p => ({...p, href: './BlogPost.dc.html?p=' + p.slug}));
+    const visiblePosts = this.state.activeFilter === 'all'
+      ? posts
+      : posts.filter(p => p.tag.toLowerCase() === this.state.activeFilter);
+
+    return {
+      filters,
+      visiblePosts,
+      selectFilter: this.selectFilter,
+      setEmail: this.setEmail,
+      subscribe: this.subscribe,
+      email: this.state.email,
+      subscribeLabel: this.state.subscribed ? 'Subscribed ✓' : 'Subscribe',
+    };
+  }
+}
+
+</script>
+</body>
+</html>

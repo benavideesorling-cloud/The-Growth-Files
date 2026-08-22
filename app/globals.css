@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens sourced from the approved prototype (.dc.html files), not the
+ * approximate hex values listed in the production brief — the brief itself
+ * says to prefer the prototype's precise values when they differ.
+ *
+ * Two navy panel shades (--color-navy-panel / --color-navy-panel-alt) and two
+ * body-text greys (--color-body / --color-body-alt) exist because the
+ * prototype itself uses both inconsistently across pages. Preserved as-is
+ * rather than silently unified — each page port should keep whichever shade
+ * that page's original file used.
+ */
+@theme {
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
+
+  --color-navy: #0d1826;
+  --color-navy-deep: #0c1622;
+  --color-navy-panel: #101d30;
+  --color-navy-panel-alt: #15263d;
+
+  --color-green: #22c55e;
+  --color-green-dark: #16a34a;
+  --color-green-soft: #dcf5e3;
+  --color-green-deep: #14532d;
+  --color-green-deep-alt: #166534;
+
+  --color-paper: #f2f4f2;
+  --color-white: #ffffff;
+
+  --color-body: #5a6672;
+  --color-body-alt: #3d4a5a;
+  --color-muted: #8a96a3;
+  --color-muted-alt: #7d8b9a;
+  --color-ink: #0d1826;
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1024px;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

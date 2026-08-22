@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+</style>
+</helmet>
+<dc-import name="Header" active="Home" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:100px 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;">
+    <div>
+      <dc-import name="Eyebrow" label="PERFORMANCE MARKETING + AI SEARCH" hint-size="260,24"></dc-import>
+      <h1 style="font-size:56px;font-weight:800;letter-spacing:-0.02em;line-height:1.05;color:#ffffff;margin:24px 0 0;">Every euro accountable.</h1>
+      <p style="font-size:17px;line-height:1.6;color:#b6c0cc;max-width:520px;margin:24px 0 0;">I help brands grow through performance marketing, AI Search, SEO, SEA, analytics and growth strategy, connecting visibility, paid media, tracking and conversion into one measurable system.</p>
+      <div style="display:flex;gap:14px;margin-top:32px;">
+        <a href="./Contact.dc.html" style="background:#22c55e;color:#0d1826;padding:13px 24px;border-radius:6px;font-weight:700;font-size:15px;transition:transform 0.2s ease,box-shadow 0.2s ease;" style-hover="transform:translateY(-2px);box-shadow:0 8px 20px rgba(34,197,94,0.35);">Work with me</a>
+        <a href="./CaseStudies.dc.html" style="border:1px solid rgba(255,255,255,0.2);color:#ffffff;padding:13px 24px;border-radius:6px;font-weight:700;font-size:15px;transition:transform 0.2s ease,background 0.2s ease;" style-hover="transform:translateY(-2px);background:rgba(255,255,255,0.08);">View case studies</a>
+      </div>
+    </div>
+    <div style="background:#15263d;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:28px;font-family:'IBM Plex Mono',monospace;font-size:13px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+        <span style="color:#7d8b9a;">growth-ledger.json</span>
+        <span style="display:flex;gap:5px;"><span style="width:5px;height:5px;border-radius:50%;background:#3a4c66;"></span><span style="width:5px;height:5px;border-radius:50%;background:#3a4c66;"></span><span style="width:5px;height:5px;border-radius:50%;background:#3a4c66;"></span></span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <sc-for list="{{ledger}}" as="l" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;">
+            <span><span style="color:#7d8b9a;">{{l.id}}</span> <span style="color:#22c55e;">{{l.key}}</span></span>
+            <span style="color:#e2e8f0;">{{l.discipline}}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;justify-content:space-between;padding-top:2px;"><span style="color:#22c55e;">"systemOutput"</span><span style="color:#e2e8f0;">measurable growth</span></div>
+      </div>
+      <div style="margin-top:30px;padding-top:4px;">
+        <dc-import name="SignalTrace" points="{{ledgerTrace}}" width="300" height="68" hint-size="100%,68"></dc-import>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0c1622;padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;gap:48px;">
+    <sc-for list="{{stats}}" as="stat" hint-placeholder-count="5">
+      <div data-reveal style="display:flex;gap:16px;opacity:0;transform:translateY(20px);">
+        <div style="width:2px;background:#22c55e;"></div>
+        <div>
+          <div data-counter style="font-size:30px;font-weight:800;color:#22c55e;">{{stat.value}}</div>
+          <div style="font-size:11px;color:#8a96a3;letter-spacing:0.05em;margin-top:6px;font-family:'IBM Plex Mono',monospace;">{{stat.label}}</div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:56px 48px 40px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="BRAND I COLLOBORATED" hint-size="220,24"></dc-import>
+    <div style="overflow:hidden;margin-top:28px;">
+      <div data-marquee style="display:flex;align-items:center;gap:64px;width:max-content;animation:marquee 42s linear infinite;">
+        <sc-for list="{{brandsDouble}}" as="b" hint-placeholder-count="12">
+          <div role="img" aria-label="{{b.name}}" style="{{b.style}}" style-hover="opacity:0.9;"></div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:60px 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 0.9fr;gap:60px;align-items:center;">
+    <div data-reveal style="opacity:0;transform:translateY(24px);">
+      <dc-import name="Eyebrow" label="THE PROBLEM" hint-size="220,24"></dc-import>
+      <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;line-height:1.2;margin:20px 0 16px;">Most teams do not have a traffic problem.<br />They have a system problem.</h2>
+      <p style="font-size:15px;color:#5a6672;line-height:1.6;margin:0;">Visibility, paid media, analytics, creative, CRM and reporting often operate as separate projects. That creates expensive handoffs, unclear ownership and decisions based on partial evidence.</p>
+    </div>
+    <div data-reveal style="background:#ffffff;border:1px solid rgba(13,24,38,0.08);border-radius:10px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.05);opacity:0;transform:translateY(24px);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a96a3;letter-spacing:0.06em;margin-bottom:16px;">SYSTEM LEAK MAP</div>
+      <svg viewBox="0 0 400 140" style="width:100%;">
+        <path d="M40,105 L140,32 L260,105 L360,32" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,4" />
+        <circle cx="40" cy="105" r="17" fill="#f2f4f2" stroke="#22c55e" stroke-width="2" />
+        <circle cx="140" cy="32" r="17" fill="#f2f4f2" stroke="#22c55e" stroke-width="2" />
+        <circle cx="260" cy="105" r="17" fill="#f2f4f2" stroke="#22c55e" stroke-width="2" />
+        <circle cx="360" cy="32" r="17" fill="#f2f4f2" stroke="#22c55e" stroke-width="2" />
+        <text x="40" y="132" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a6672">VISIBILITY</text>
+        <text x="140" y="14" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a6672">MEDIA</text>
+        <text x="260" y="132" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a6672">DATA</text>
+        <text x="360" y="14" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a6672">CONVERSION</text>
+      </svg>
+      <div style="font-size:12px;color:#8a96a3;margin-top:10px;">Dashed links = handoffs, tracking gaps and fragmented ownership.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:90px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="THE SOLUTION" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;margin:20px 0 12px;">The full growth discipline, owned end-to-end.</h2>
+    <p style="font-size:15px;color:#8a96a3;margin:0 0 36px;max-width:560px;">Six disciplines connected through one strategy, one measurement model and one owner.</p>
+    <div style="display:flex;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#7d8b9a;letter-spacing:0.06em;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="width:50px;">ID</div>
+      <div style="width:140px;">PROPERTY</div>
+      <div style="flex:1;">DISCIPLINE</div>
+      <div style="width:100px;text-align:right;">OUTPUT</div>
+    </div>
+    <sc-for list="{{solution}}" as="s" hint-placeholder-count="6">
+      <div data-reveal style="display:flex;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06);opacity:0;transform:translateY(18px);transition:background 0.2s ease;" style-hover="background:rgba(255,255,255,0.03);">
+        <div style="width:50px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;">{{s.id}}</div>
+        <div style="width:140px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;">{{s.property}}</div>
+        <div style="flex:1;padding-right:20px;">
+          <div style="font-size:16px;font-weight:700;color:#ffffff;margin-bottom:4px;">{{s.title}}</div>
+          <div style="font-size:13px;color:#8a96a3;">{{s.desc}}</div>
+        </div>
+        <div style="width:100px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#22c55e;">{{s.output}}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:90px 48px 50px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="HOW IT WORKS" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 40px;">Diagnose. Prioritize. Execute. Improve.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+      <sc-for list="{{steps}}" as="step" hint-placeholder-count="4">
+        <div data-reveal style="opacity:0;transform:translateY(20px);transition:transform 0.25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="font-size:16px;font-weight:700;color:#0d1826;margin-bottom:8px;">{{step.title}}</div>
+          <div style="font-size:13px;color:#5a6672;line-height:1.6;">{{step.desc}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:50px 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="CASE RECORDS" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 36px;">Real campaigns. Documented outcomes.</h2>
+    <div>
+      <sc-for list="{{records}}" as="r" hint-placeholder-count="3">
+        <div data-reveal style="display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-top:1px solid rgba(13,24,38,0.08);gap:24px;opacity:0;transform:translateY(18px);transition:background 0.2s ease;" style-hover="background:rgba(13,24,38,0.02);">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a96a3;letter-spacing:0.04em;margin-bottom:6px;">{{r.tag}}</div>
+            <div style="font-size:17px;font-weight:700;color:#0d1826;">{{r.title}}</div>
+          </div>
+          <div style="text-align:right;min-width:180px;">
+            <div style="font-size:20px;font-weight:800;color:#16a34a;">{{r.stat}}</div>
+            <div style="font-size:12px;color:#5a6672;">{{r.sub}}</div>
+          </div>
+          <a href="{{r.href}}" style="font-size:13px;font-weight:700;color:#16a34a;letter-spacing:0.03em;white-space:nowrap;transition:transform 0.2s ease;display:inline-block;" style-hover="transform:translateX(4px);">OPEN FILE →</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <div>
+      <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0 0 12px;">Let's build something that actually works.</h2>
+      <p style="font-size:15px;color:#0d1826;opacity:0.8;margin:0;">Available for consulting, freelance projects and performance marketing roles.</p>
+    </div>
+    <div style="text-align:right;font-size:14px;font-weight:700;color:#0d1826;line-height:1.8;">
+      <div>benavidesorling@gmail.com</div>
+      <div>+31 6 28022153</div>
+      <div>Amsterdam, The Netherlands</div>
+      <div>linkedin.com/in/benavideesf1b4</div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    const stats = [
+      {value:'6+', label:'YEARS EXPERIENCE'},
+      {value:'€1.3M+', label:'AD SPEND MANAGED'},
+      {value:'€6.9M+', label:'REVENUE GENERATED'},
+      {value:'554%', label:'PEAK ROAS'},
+      {value:'250+', label:'WEEKLY AI CITATIONS'},
+    ];
+    const ledger = [
+      {id:'01', key:'"visibility"', discipline:'AI Search + SEO', metric:'250+ weekly citations'},
+      {id:'02', key:'"acquisition"', discipline:'SEA + paid media', metric:'€1.3M+ managed'},
+      {id:'03', key:'"measurement"', discipline:'analytics + CRM', metric:'clean attribution'},
+      {id:'04', key:'"conversion"', discipline:'creative + CRO', metric:'554% peak ROAS'},
+    ];
+    const defaultFilter = 'grayscale(1) contrast(0.9)';
+    const baseH = 34;
+    const brands = [
+      {name:'AkzoNobel', src:'./assets/logos/akzonobel.webp'},
+      {name:"Ben & Jerry's", src:'./assets/logos/ben-jerrys.png', h: 72},
+      {name:'SUPS', src:'./assets/logos/sups.png', h: 64},
+      {name:'Virtek', src:'./assets/logos/virtek.png'},
+      {name:'White Shark Media', src:'./assets/logos/whiteshark.png'},
+      {name:'Central Bark', src:'./assets/logos/centralbark.jpeg', h: 72},
+      {name:'Heffner Toyota', src:'./assets/logos/heffner-toyota.png', h: 62},
+      {name:'Boels Rental', src:'./assets/logos/boels.webp'},
+      {name:'ParkBee', src:'./assets/logos/parkbee.png'},
+      {name:'Chameleon Business Centres', src:'./assets/logos/chameleon.png'},
+      {name:'Rocketbarn', src:'./assets/logos/rocketbarn.png'},
+      {name:'Hogenhouck M&A', src:'./assets/logos/hogenhouck.png'},
+    ].map(b => ({...b, style: 'height:' + (b.h || baseH) + 'px;width:180px;background-image:url(' + b.src + ');background-repeat:no-repeat;background-position:center;background-size:contain;opacity:0.55;transition:opacity 0.2s ease;filter:' + (b.filter || defaultFilter) + ';'}));
+    const solution = [
+      {id:'01', property:'"direction"', title:'Strategy', desc:'Roadmaps, priorities, workshops and senior growth direction.', output:'focus'},
+      {id:'02', property:'"acquisition"', title:'Performance Marketing', desc:'SEA and paid media across search, social, apps and marketplaces.', output:'demand'},
+      {id:'03', property:'"visibility"', title:'AI Search & SEO', desc:'GEO/AEO, SEO, structured data, schema and content architecture.', output:'citations'},
+      {id:'04', property:'"measurement"', title:'Analytics & Data', desc:'GA4, GTM, dashboards, attribution and funnel analysis.', output:'evidence'},
+      {id:'05', property:'"adaptation"', title:'Industry Growth', desc:'B2B, B2C, CRM, local visibility and app growth systems.', output:'fit'},
+      {id:'06', property:'"conversion"', title:'Creative & Content', desc:'Landing pages, CRO, UX collaboration and content planning.', output:'action'},
+    ];
+    const steps = [
+      {num:'01', title:'Diagnose', desc:'Find the leaks across visibility, media, tracking and conversion.'},
+      {num:'02', title:'Prioritize', desc:'Choose what to fix, scale, stop or automate first.'},
+      {num:'03', title:'Execute', desc:'Turn strategy into campaigns, content, tracking and workflows.'},
+      {num:'04', title:'Improve', desc:'Use evidence and testing to compound performance.'},
+    ];
+    const records = [
+      {tag:'CASE 001', title:'Revenue Growth', stat:'€4M → €6.9M', sub:'72% year-on-year growth', href:'./CaseStudyDetail.dc.html'},
+      {tag:'CASE 002', title:'AI Search Visibility', stat:'250+', sub:'weekly citations across AI platforms', href:'./CaseStudyDetail002.dc.html'},
+      {tag:'CASE 003', title:'App Growth', stat:'85K+', sub:'downloads through acquisition programs', href:'./CaseStudyDetail003.dc.html'},
+    ];
+    const ledgerTrace = [47, 51, 49, 54, 52, 57, 60];
+    return { stats, ledger, brandsDouble: brands.concat(brands), solution, steps, records, ledgerTrace };
+  }
+}
+
+</script>
+</body>
+</html>

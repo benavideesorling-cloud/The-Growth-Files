@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+</helmet>
+<dc-import name="Header" active="Services" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:90px 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="SERVICES" hint-size="220,24"></dc-import>
+    <h1 style="font-size:48px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;margin:24px 0 16px;max-width:760px;">Growth services, not marketing tasks.</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:620px;line-height:1.6;margin:0;">Six connected disciplines, each with clear ownership, proof and measurable outcomes.</p>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:80px 48px 40px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="THE DISCIPLINES" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 40px;">Every tool. Every channel. One goal.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <sc-for list="{{services}}" as="s" hint-placeholder-count="6">
+        <div data-reveal style="background:#ffffff;border:1px solid rgba(13,24,38,0.08);border-radius:8px;padding:32px;opacity:0;transform:translateY(20px);transition:transform 0.25s ease,box-shadow 0.25s ease,border-color 0.25s ease,background 0.25s ease;" style-hover="transform:translateY(-4px);box-shadow:0 12px 28px rgba(13,24,38,0.1);border-color:#22c55e;background:#f5fbf6;">
+          <div style="font-family:'IBM Plex Mono',monospace;color:#16a34a;font-size:13px;margin-bottom:16px;">{{s.num}}</div>
+          <div style="font-size:20px;font-weight:800;color:#0d1826;letter-spacing:-0.01em;margin-bottom:12px;">{{s.title}}</div>
+          <div style="font-size:14px;color:#5a6672;line-height:1.6;margin-bottom:20px;">{{s.desc}}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a96a3;letter-spacing:0.06em;">OUTPUT · {{s.output}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:40px 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <dc-import name="Eyebrow" label="HOW IT WORKS" hint-size="220,24"></dc-import>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:20px 0 40px;">Diagnose. Prioritize. Execute. Improve.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;">
+      <sc-for list="{{steps}}" as="step" hint-placeholder-count="4">
+        <div data-reveal style="border-left:2px solid #22c55e;padding-left:20px;opacity:0;transform:translateY(20px);transition:transform 0.25s ease;" style-hover="transform:translateY(-4px);">
+          <div style="font-size:16px;font-weight:700;color:#0d1826;margin-bottom:8px;">{{step.title}}</div>
+          <div style="font-size:13px;color:#5a6672;line-height:1.6;">{{step.desc}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <div>
+      <h2 style="font-size:32px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0 0 12px;">Let's build something that actually works.</h2>
+      <p style="font-size:15px;color:#0d1826;opacity:0.8;margin:0;">Available for consulting, freelance projects and performance marketing roles.</p>
+    </div>
+    <a href="./Contact.dc.html" style="background:#0d1826;color:#ffffff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:15px;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Get in touch</a>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      services: [
+        {num:'01', title:'Strategy', desc:'Roadmaps, priorities, workshops and senior growth direction.', output:'FOCUS'},
+        {num:'02', title:'Performance Marketing', desc:'SEA and paid media across search, social, apps and marketplaces.', output:'DEMAND'},
+        {num:'03', title:'AI Search & SEO', desc:'GEO/AEO, SEO, structured data, schema and content architecture.', output:'CITATIONS'},
+        {num:'04', title:'Analytics & Data', desc:'GA4, GTM, dashboards, attribution and funnel analysis.', output:'EVIDENCE'},
+        {num:'05', title:'Industry Growth', desc:'B2B, B2C, CRM, local visibility and app growth systems.', output:'FIT'},
+        {num:'06', title:'Creative & Content', desc:'Landing pages, CRO, UX collaboration and content planning.', output:'ACTION'},
+      ],
+      steps: [
+        {num:'01', title:'Diagnose', desc:'Find the leaks across visibility, media, tracking and conversion.'},
+        {num:'02', title:'Prioritize', desc:'Choose what to fix, scale, stop or automate first.'},
+        {num:'03', title:'Execute', desc:'Turn strategy into campaigns, content, tracking and workflows.'},
+        {num:'04', title:'Improve', desc:'Measure outcomes and refine what works.'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

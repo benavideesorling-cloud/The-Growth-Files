@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Building AI search visibility with a content, trust, and technical approach | The Growth Files</title>
+<meta name="description" content="How auditing AI referral data, then building content, trust, and technical foundations, moved a client from invisible in AI search to consistently cited." />
+<link rel="canonical" href="{SITE_URL}/case-studies/ai-visibility-geo-aeo" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="From invisible to citable: building AI search visibility" />
+<meta property="og:description" content="How auditing AI referral data, then building content, trust, and technical foundations, moved a client from invisible in AI search to consistently cited." />
+<meta property="og:url" content="{SITE_URL}/case-studies/ai-visibility-geo-aeo" />
+<meta name="twitter:card" content="summary_large_image" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #22c55e; }
+  a:hover { color: #16a34a; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Article","@id":"{SITE_URL}/case-studies/ai-visibility-geo-aeo#article","headline":"From invisible to citable: building AI search visibility","description":"How auditing AI referral data, then building content, trust, and technical foundations, moved a client from invisible in AI search to consistently cited.","author":{"@id":"{SITE_URL}/#person"},"mainEntityOfPage":"{SITE_URL}/case-studies/ai-visibility-geo-aeo","about":["AI Search","Answer Engine Optimization","Generative Engine Optimization","SEO"]},
+{"@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"{SITE_URL}/"},
+{"@type":"ListItem","position":2,"name":"Case studies","item":"{SITE_URL}/case-studies"},
+{"@type":"ListItem","position":3,"name":"AI visibility, GEO and AEO"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How is AI search visibility measured separately from traditional SEO?","acceptedAnswer":{"@type":"Answer","text":"Standard SEO tools track search engine rankings, but they don't show whether AI systems like ChatGPT, Copilot, or Perplexity reference a site. Measuring this requires a combination of tools: Microsoft Clarity for Copilot referral data specifically, dedicated AEO tracking tools, GA4 for downstream traffic behavior, and manual prompt testing directly in AI chat interfaces."}},
+{"@type":"Question","name":"What are the three pillars of AI search optimization (AEO/GEO)?","acceptedAnswer":{"@type":"Answer","text":"Content, trust, and technical. Content covers whether material answers real questions in an extractable format. Trust covers whether there's a verifiable reason for an AI system to treat the source as credible, such as identified authorship and references. Technical covers whether AI systems can actually parse the site, through structured data, a correctly configured llms.txt file, and appropriate crawler instructions."}},
+{"@type":"Question","name":"Why is identifying the content author important for AI search visibility?","acceptedAnswer":{"@type":"Answer","text":"AI systems weigh trust signals, including clear authorship and cited references, when deciding which sources to cite. This maps to the EEAT framework (experience, expertise, authoritativeness, trustworthiness), and anonymous or unattributed content is a weaker citation candidate than content with a clear, verifiable author."}},
+{"@type":"Question","name":"What is an llms.txt file and why does it matter for AI visibility?","acceptedAnswer":{"@type":"Answer","text":"An llms.txt file gives AI crawlers explicit guidance about a site, separate from traditional robots.txt crawl instructions. It's one part of the technical foundation needed for AI systems to correctly read and understand a site, alongside structured data and accurate crawler permissions."}},
+{"@type":"Question","name":"Should existing search traffic be removed if it isn't relevant to the business?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. In this case, traffic from prompts unrelated to the client's actual focus was left in place rather than disrupted, since it was still real, functioning traffic. New, more relevant content was built alongside it instead of replacing it outright."}}]}
+]}
+</script>
+</helmet>
+<dc-import name="Header" active="CaseStudies" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:70px 48px 60px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <a href="./CaseStudies.dc.html" style="font-size:13px;color:#7d8b9a;">← All case studies</a>
+    <div style="margin-top:24px;">
+      <dc-import name="Eyebrow" label="CASE 002 · AI VISIBILITY" hint-size="280,24"></dc-import>
+    </div>
+    <h1 style="font-size:46px;font-weight:800;letter-spacing:-0.025em;color:#ffffff;margin:20px 0 16px;max-width:900px;line-height:1.1;">From invisible to citable: building AI search visibility</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:680px;line-height:1.6;margin:0 0 16px;text-wrap:pretty;">Measuring AI referrals first, then building content, trust, and technical foundations against what the data showed.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;letter-spacing:0.04em;">ROLE: AI SEARCH &amp; SEO  |  SURFACES: CHATGPT · COPILOT · PERPLEXITY</div>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:0 48px 70px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <sc-for list="{{stats}}" as="s" hint-placeholder-count="3">
+      <div data-reveal style="background:#101d30;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:28px;opacity:0;transform:translateY(20px);">
+        <div data-counter style="font-size:32px;font-weight:800;color:#22c55e;margin-bottom:8px;">{{s.value}}</div>
+        <div style="font-size:12px;font-weight:700;color:#ffffff;letter-spacing:0.04em;line-height:1.5;">{{s.label}}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:80px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:56px;">
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">THE SITUATION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The situation</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">For one client, the question wasn't just "are we ranking on Google," it was "do AI systems even know we exist, and for what." Traditional search visibility doesn't tell you anything about whether ChatGPT, Copilot, or Perplexity ever mention you, or under which prompts.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">MEASUREMENT</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">How I found out where we actually stood</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 24px;text-wrap:pretty;">Before recommending anything, I needed real data on AI referral behavior, not assumptions. I used a combination of tools, each covering a different gap:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch;margin-bottom:24px;">
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">Microsoft Clarity</strong>, which surfaces referral traffic from Microsoft Copilot specifically, something most standard analytics setups miss entirely</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">HubSpot's AEO tooling</strong>, for tracking answer engine visibility</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">GA4</strong>, for the traffic and referral side once visitors actually arrived</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;"><strong style="color:#0d1826;">Manual testing</strong>, running the same prompts directly in ChatGPT and Perplexity to see, firsthand, what they said and which sources they cited</p>
+        </div>
+      </div>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Seeing Copilot referral data specifically through Clarity was a genuine turning point. Most AI visibility conversations focus on ChatGPT alone, and this made it clear that different AI platforms needed to be measured separately, not lumped into one generic "AI traffic" number.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">DIAGNOSIS</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The diagnosis</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">The audit surfaced something specific: the site was already ranking for a set of prompts that had nothing to do with its actual focus area. That traffic was real, but it wasn't the traffic that mattered for the business.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">APPROACH</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.25;">The approach: three pillars</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 24px;text-wrap:pretty;">Rather than chasing every possible fix, the work was organized around three areas, each answering a different question:</p>
+      <div style="display:flex;flex-direction:column;gap:2px;border-left:2px solid #22c55e;padding-left:24px;">
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">CONTENT</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Does the content actually answer the questions people (and AI systems) are asking, structured in a way AI can extract cleanly?</p>
+        </div>
+        <div style="padding-bottom:22px;">
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">TRUST</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Is there a clear, verifiable reason for an AI system to treat this source as credible, an identified author, references, evidence of expertise?</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:800;color:#0d1826;letter-spacing:0.06em;margin-bottom:8px;">TECHNICAL</div>
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">Can AI systems actually read and parse the site correctly in the first place, structured data, a properly configured llms.txt, and accurate crawling instructions?</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">EXECUTION</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.25;">Execution</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Content.</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">The existing prompt-level ranking was left in place rather than disrupted, since it was still driving some traffic, while new content specifically targeted the topics that actually mattered. Six blog posts were published in one month, each structured around a real question and a direct, extractable answer rather than traditional keyword-led copy.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Trust.</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">Each piece of content carried a clearly identified author and cited references, rather than being published anonymously. This is a direct EEAT (experience, expertise, authoritativeness, trustworthiness) signal, and it's one AI systems weigh heavily when deciding whether to cite a source.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:24px;transition:transform 0.25s ease, box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 28px rgba(13,24,38,0.09);">
+          <div style="font-size:15px;font-weight:800;color:#0d1826;margin-bottom:10px;">Technical.</div>
+          <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">An <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;">llms.txt</span> file was built, the <span style="font-family:'IBM Plex Mono',monospace;font-size:15px;">robots.txt</span> was updated to reflect how AI crawlers should be treated, and FAQ content was properly marked up with structured data so the question and answer pairs were machine readable, not just visually formatted.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RESULTS</div>
+      <h2 style="font-size:28px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.25;">Results</h2>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">500+ monthly AI citations</strong> across leading AI platforms</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span><strong style="color:#0d1826;">20% Share of Authority</strong> achieved in the client's category</span></div>
+        <div style="font-size:16px;color:#3d4a5a;line-height:1.6;display:flex;gap:12px;"><span style="color:#22c55e;font-weight:700;">✓</span><span>Six pieces of new, AI-structured content published within a single month, without sacrificing the traffic already being generated by existing content</span></div>
+      </div>
+    </div>
+
+    <div style="background:#0d1826;border-radius:10px;padding:36px 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;letter-spacing:0.06em;margin-bottom:12px;">WHAT THIS PROVES</div>
+      <h2 style="font-size:26px;font-weight:800;letter-spacing:-0.015em;color:#ffffff;margin:0 0 16px;line-height:1.25;">What this proves</h2>
+      <p style="font-size:17px;color:#b6c0cc;line-height:1.75;margin:0;text-wrap:pretty;">AI visibility isn't one thing you fix, it's three separate questions that all have to be answered together: is the content actually useful and extractable, is there a real reason to trust the source, and can AI systems technically parse the site at all. Measurement mattered just as much as the fix. Without checking Copilot referrals specifically through Clarity, that channel would have stayed invisible, since it doesn't show up the same way in standard analytics.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">RELATED SERVICES</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 16px;line-height:1.3;">Related services</h2>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0 0 14px;text-wrap:pretty;">This work sits under <a href="./Services.dc.html#ai-search-seo" style="font-weight:600;">AI Search &amp; SEO</a>: GEO/AEO strategy, structured data, and content architecture.</p>
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.75;margin:0;text-wrap:pretty;">See also: <a href="./CaseStudyDetail.dc.html" style="font-weight:600;">Google Ads revenue growth</a>, a different channel from the same evidence-led, measure-first approach.</p>
+    </div>
+
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:12px;">FAQ</div>
+      <h2 style="font-size:24px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:0 0 20px;line-height:1.3;">FAQ</h2>
+      <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #d7ded9;">
+        <sc-for list="{{faqs}}" as="f" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid #d7ded9;padding:22px 0;">
+            <div style="font-size:16px;font-weight:800;color:#0d1826;margin-bottom:10px;line-height:1.45;text-wrap:pretty;">{{f.q}}</div>
+            <p style="font-size:16px;color:#3d4a5a;line-height:1.7;margin:0;text-wrap:pretty;">{{f.a}}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background:#22c55e;padding:64px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:32px;">
+    <h2 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#0d1826;margin:0;">Want to know if AI search can find you?</h2>
+    <a href="./Contact.dc.html" style="background:#0d1826;color:#ffffff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Get in touch</a>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+  }
+  renderVals() {
+    return {
+      stats: [
+        {value:'500+', label:'MONTHLY AI CITATIONS'},
+        {value:'20%', label:'SHARE OF AUTHORITY IN CATEGORY'},
+        {value:'6', label:'AI-STRUCTURED POSTS IN ONE MONTH'},
+      ],
+      faqs: [
+        {q:'How is AI search visibility measured separately from traditional SEO?', a:'Standard SEO tools track search engine rankings, but they don\u2019t show whether AI systems like ChatGPT, Copilot, or Perplexity reference a site. Measuring this requires a combination of tools: Microsoft Clarity for Copilot referral data specifically, dedicated AEO tracking tools, GA4 for downstream traffic behavior, and manual prompt testing directly in AI chat interfaces.'},
+        {q:'What are the three pillars of AI search optimization (AEO/GEO)?', a:'Content, trust, and technical. Content covers whether material answers real questions in an extractable format. Trust covers whether there\u2019s a verifiable reason for an AI system to treat the source as credible, such as identified authorship and references. Technical covers whether AI systems can actually parse the site, through structured data, a correctly configured llms.txt file, and appropriate crawler instructions.'},
+        {q:'Why is identifying the content author important for AI search visibility?', a:'AI systems weigh trust signals, including clear authorship and cited references, when deciding which sources to cite. This maps to the EEAT framework (experience, expertise, authoritativeness, trustworthiness), and anonymous or unattributed content is a weaker citation candidate than content with a clear, verifiable author.'},
+        {q:'What is an llms.txt file and why does it matter for AI visibility?', a:'An llms.txt file gives AI crawlers explicit guidance about a site, separate from traditional robots.txt crawl instructions. It\u2019s one part of the technical foundation needed for AI systems to correctly read and understand a site, alongside structured data and accurate crawler permissions.'},
+        {q:'Should existing search traffic be removed if it isn\u2019t relevant to the business?', a:'Not necessarily. In this case, traffic from prompts unrelated to the client\u2019s actual focus was left in place rather than disrupted, since it was still real, functioning traffic. New, more relevant content was built alongside it instead of replacing it outright.'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

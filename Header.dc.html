@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; }
+  a { text-decoration: none; }
+</style>
+</helmet>
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 48px;background:#0d1826;font-family:'Inter','Helvetica Neue',Arial,sans-serif;">
+  <a href="./Home.dc.html" style="text-decoration:none;">
+    <div style="font-size:21px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;">The Growth Files</div>
+  </a>
+  <nav style="display:flex;align-items:center;gap:30px;">
+    <sc-for list="{{items}}" as="item" hint-placeholder-count="5">
+      <a href="{{item.href}}" style="font-size:14px;font-weight:600;color:{{item.color}};">{{item.label}}</a>
+    </sc-for>
+  </nav>
+  <a href="./Contact.dc.html" style="background:#22c55e;color:#0d1826;padding:11px 22px;border-radius:6px;font-weight:700;font-size:14px;white-space:nowrap;transition:transform 0.2s ease;" style-hover="transform:translateY(-2px);">Work with me</a>
+</header>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;active&quot;:{&quot;editor&quot;:null,&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active || '';
+    const nav = [
+      ['Services','./Services.dc.html','Services'],
+      ['Case Studies','./CaseStudies.dc.html','CaseStudies'],
+      ['Blog','./Blog.dc.html','Blog'],
+      ['About','./About.dc.html','About'],
+      ['Contact','./Contact.dc.html','Contact'],
+    ];
+    const items = nav.map(([label,href,key]) => ({label,href,color: active===key?'#22c55e':'#e2e8f0'}));
+    return { items };
+  }
+}
+
+</script>
+</body>
+</html>

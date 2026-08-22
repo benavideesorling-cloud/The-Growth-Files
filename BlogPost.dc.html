@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #f2f4f2; }
+  a { color: #16a34a; }
+  a:hover { color: #0f7a37; }
+</style>
+</helmet>
+<dc-import name="Header" active="Blog" hint-size="100%,84"></dc-import>
+
+<section style="background:#0d1826;padding:64px 48px 56px;font-family:'Inter',sans-serif;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <a href="./Blog.dc.html" style="font-size:13px;color:#7d8b9a;">← All field notes</a>
+    <div style="margin-top:24px;">
+      <dc-import name="Eyebrow" label="{{eyebrow}}" hint-size="300,24"></dc-import>
+    </div>
+    <h1 style="font-size:44px;font-weight:800;letter-spacing:-0.025em;color:#ffffff;margin:20px 0 18px;max-width:880px;line-height:1.12;text-wrap:pretty;">{{title}}</h1>
+    <p style="font-size:17px;color:#b6c0cc;max-width:700px;line-height:1.65;margin:0 0 20px;text-wrap:pretty;">{{metaDesc}}</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7d8b9a;letter-spacing:0.04em;">{{tag}} &nbsp;|&nbsp; {{date}} &nbsp;|&nbsp; {{read}}</div>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:72px 48px 20px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;">
+    <p style="font-size:20px;color:#0d1826;line-height:1.65;font-weight:500;margin:0 0 8px;text-wrap:pretty;border-left:2px solid #22c55e;padding-left:22px;" dangerouslySetInnerHTML="{{lead}}"></p>
+  </div>
+</section>
+
+<section style="background:#f2f4f2;padding:24px 48px 80px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:0;">
+    <sc-for list="{{blocks}}" as="b" hint-placeholder-count="8">
+      <div style="display:contents;">
+        <sc-if value="{{b.isH2}}" hint-placeholder-val="{{false}}">
+          <h2 style="font-size:27px;font-weight:800;letter-spacing:-0.015em;color:#0d1826;margin:44px 0 18px;line-height:1.25;text-wrap:pretty;">{{b.text}}</h2>
+        </sc-if>
+        <sc-if value="{{b.isP}}" hint-placeholder-val="{{true}}">
+          <p style="font-size:17px;color:#3d4a5a;line-height:1.78;margin:0 0 20px;text-wrap:pretty;" dangerouslySetInnerHTML="{{b.html}}"></p>
+        </sc-if>
+        <sc-if value="{{b.isUl}}" hint-placeholder-val="{{false}}">
+          <div style="display:flex;flex-direction:column;gap:12px;margin:4px 0 26px;">
+            <sc-for list="{{b.items}}" as="it" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:14px 1fr;gap:14px;align-items:start;">
+                <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;margin-top:11px;"></div>
+                <div style="font-size:17px;color:#3d4a5a;line-height:1.75;text-wrap:pretty;" dangerouslySetInnerHTML="{{it.html}}"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{b.isOl}}" hint-placeholder-val="{{false}}">
+          <div style="display:flex;flex-direction:column;gap:14px;margin:4px 0 26px;">
+            <sc-for list="{{b.items}}" as="it" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start;background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:20px 22px;">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:#16a34a;margin-top:4px;">{{it.n}}</div>
+                <div style="font-size:17px;color:#3d4a5a;line-height:1.72;text-wrap:pretty;" dangerouslySetInnerHTML="{{it.html}}"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{b.isTable}}" hint-placeholder-val="{{false}}">
+          <div style="background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;overflow:hidden;margin:4px 0 30px;">
+            <div style="display:grid;grid-template-columns:1fr 2fr;background:#0d1826;">
+              <sc-for list="{{b.headers}}" as="h" hint-placeholder-count="2">
+                <div style="padding:14px 20px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#22c55e;font-weight:700;">{{h.text}}</div>
+              </sc-for>
+            </div>
+            <sc-for list="{{b.rows}}" as="r" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:1fr 2fr;border-top:1px solid #eef1ee;">
+                <div style="padding:16px 20px;font-size:15px;font-weight:700;color:#0d1826;">{{r.a}}</div>
+                <div style="padding:16px 20px;font-size:15px;color:#3d4a5a;line-height:1.6;" dangerouslySetInnerHTML="{{r.b}}"></div>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#0d1826;padding:76px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#22c55e;letter-spacing:0.06em;margin-bottom:14px;">FREQUENTLY ASKED QUESTIONS</div>
+    <h2 style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#ffffff;margin:0 0 34px;line-height:1.2;">The questions people actually ask.</h2>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+        <div style="background:#101d30;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:24px 26px;transition:border-color 0.25s ease;" style-hover="border-color:rgba(34,197,94,0.5);">
+          <div style="font-size:17px;font-weight:700;color:#ffffff;margin-bottom:10px;line-height:1.45;text-wrap:pretty;">{{f.q}}</div>
+          <div style="font-size:16px;color:#b6c0cc;line-height:1.72;text-wrap:pretty;" dangerouslySetInnerHTML="{{f.a}}"></div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section style="background:#f8f9f8;padding:70px 48px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#16a34a;letter-spacing:0.06em;margin-bottom:14px;">RELATED SERVICES</div>
+    <sc-for list="{{related}}" as="r" hint-placeholder-count="2">
+      <p style="font-size:17px;color:#3d4a5a;line-height:1.78;margin:0 0 16px;text-wrap:pretty;" dangerouslySetInnerHTML="{{r.html}}"></p>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#f8f9f8;padding:0 48px 90px;font-family:'Inter',sans-serif;">
+  <div style="max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <a href="{{prevHref}}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:block;transition:transform 0.25s ease,box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,24,38,0.08);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a96a3;letter-spacing:0.06em;margin-bottom:10px;">← PREVIOUS NOTE</div>
+      <div style="font-size:16px;font-weight:700;color:#0d1826;line-height:1.45;">{{prevTitle}}</div>
+    </a>
+    <a href="{{nextHref}}" style="text-decoration:none;background:#ffffff;border:1px solid #e2e6e2;border-radius:8px;padding:22px 24px;display:block;text-align:right;transition:transform 0.25s ease,box-shadow 0.25s ease;" style-hover="transform:translateY(-3px);box-shadow:0 10px 26px rgba(13,24,38,0.08);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8a96a3;letter-spacing:0.06em;margin-bottom:10px;">NEXT NOTE →</div>
+      <div style="font-size:16px;font-weight:700;color:#0d1826;line-height:1.45;">{{nextTitle}}</div>
+    </a>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,80"></dc-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LINKMAP = {
+  '/contact': './Contact.dc.html',
+  '/case-studies/ai-visibility-geo-aeo': './CaseStudyDetail002.dc.html',
+};
+
+function mapHref(href) {
+  if (/^https?:/.test(href)) return href;
+  if (LINKMAP[href]) return LINKMAP[href];
+  if (href.indexOf('/blog/') === 0) return './BlogPost.dc.html?p=' + href.slice(6);
+  if (href.indexOf('/services') === 0) return './Services.dc.html' + (href.split('#')[1] ? '#' + href.split('#')[1] : '');
+  if (href.indexOf('/case-studies') === 0) return './CaseStudies.dc.html';
+  return href;
+}
+
+function inline(text) {
+  let s = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, label, href) {
+    const url = mapHref(href.trim());
+    const ext = /^https?:/.test(url);
+    return '<a href="' + url + '"' + (ext ? ' target="_blank" rel="noopener"' : '') +
+      ' style="color:#16a34a;text-decoration:none;border-bottom:1px solid rgba(22,163,74,0.35);">' + label + '</a>';
+  });
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong style="color:#0d1826;font-weight:700;">$1</strong>');
+  return s;
+}
+
+function parse(md) {
+  const lines = md.split('\n');
+  const blocks = [];
+  const faqs = [];
+  const related = [];
+  let lead = '';
+  let mode = 'main';
+  let buf = [];
+  let list = null;
+
+  function flushBuf() {
+    if (!buf.length) return;
+    const text = buf.join(' ').trim();
+    buf = [];
+    if (!text) return;
+    if (mode === 'related') { related.push({ html: { __html: inline(text) } }); return; }
+    if (mode === 'faq') {
+      const m = text.match(/^\*\*(.+?)\*\*\s*(.*)$/);
+      if (m) faqs.push({ q: m[1].trim(), a: { __html: inline(m[2].trim()) } });
+      return;
+    }
+    if (!lead) { lead = inline(text); return; }
+    blocks.push({ isP: true, html: { __html: inline(text) } });
+  }
+  function flushList() {
+    if (list) { blocks.push(list); list = null; }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i];
+    const line = raw.trim();
+
+    if (/^#\s/.test(line)) { continue; }
+
+    if (/^##\s/.test(line)) {
+      flushBuf(); flushList();
+      const t = line.replace(/^##\s+/, '').trim();
+      if (/^frequently asked/i.test(t)) { mode = 'faq'; continue; }
+      if (/^related services/i.test(t)) { mode = 'related'; continue; }
+      mode = 'main';
+      blocks.push({ isH2: true, text: t });
+      continue;
+    }
+
+    if (line === '') { flushBuf(); flushList(); continue; }
+
+    if (mode === 'main' && /^\|/.test(line)) {
+      flushBuf();
+      const cells = line.split('|').slice(1, -1).map(c => c.trim());
+      if (cells.every(c => /^:?-{2,}:?$/.test(c))) continue;
+      if (!list || !list.isTable) {
+        flushList();
+        list = { isTable: true, headers: cells.map(c => ({ text: c.toUpperCase() })), rows: [] };
+      } else {
+        list.rows.push({ a: cells[0], b: { __html: inline(cells[1] || '') } });
+      }
+      continue;
+    }
+
+    if (mode === 'main' && /^-\s/.test(line)) {
+      flushBuf();
+      const txt = line.replace(/^-\s+/, '');
+      if (!list || !list.isUl) { flushList(); list = { isUl: true, items: [] }; }
+      list.items.push({ html: { __html: inline(txt) } });
+      continue;
+    }
+
+    if (mode === 'main' && /^\d+\.\s/.test(line)) {
+      flushBuf();
+      const txt = line.replace(/^\d+\.\s+/, '');
+      if (!list || !list.isOl) { flushList(); list = { isOl: true, items: [] }; }
+      list.items.push({ n: String(list.items.length + 1).padStart(2, '0'), html: { __html: inline(txt) } });
+      continue;
+    }
+
+    if (list) {
+      const last = list.items && list.items[list.items.length - 1];
+      if (last) { last.html = { __html: last.html.__html + ' ' + inline(line) }; continue; }
+    }
+    buf.push(line);
+  }
+  flushBuf(); flushList();
+  return { lead, blocks, faqs, related };
+}
+
+class Component extends DCLogic {
+  state = { posts: null };
+
+  componentDidMount() {
+    import('./motion.js').then(m => m.initAll());
+    import('./blog-posts.js').then(m => {
+      this.setState({ posts: m.POSTS }, () => this.applyMeta());
+    });
+  }
+
+  currentSlug() {
+    const q = new URLSearchParams(window.location.search);
+    return q.get('p') || '';
+  }
+
+  applyMeta() {
+    const p = this.activePost();
+    if (!p) return;
+    document.title = p.metaTitle;
+    let d = document.querySelector('meta[name="description"]');
+    if (!d) { d = document.createElement('meta'); d.setAttribute('name', 'description'); document.head.appendChild(d); }
+    d.setAttribute('content', p.metaDesc);
+    const parsed = parse(p.md);
+    const graph = [
+      { '@type': 'BlogPosting', headline: p.title, description: p.metaDesc, datePublished: p.date, author: { '@type': 'Person', name: 'Orling Benavides' }, about: ['AI Search', 'Answer Engine Optimization', 'Generative Engine Optimization', 'SEO'] },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home' },
+        { '@type': 'ListItem', position: 2, name: 'Blog' },
+        { '@type': 'ListItem', position: 3, name: p.title }] }
+    ];
+    if (parsed.faqs.length) {
+      graph.push({ '@type': 'FAQPage', mainEntity: parsed.faqs.map(f => ({
+        '@type': 'Question', name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a.__html.replace(/<[^>]+>/g, '') }
+      })) });
+    }
+    let s = document.getElementById('post-jsonld');
+    if (!s) { s = document.createElement('script'); s.type = 'application/ld+json'; s.id = 'post-jsonld'; document.head.appendChild(s); }
+    s.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+  }
+
+  activePost() {
+    const posts = this.state.posts;
+    if (!posts) return null;
+    const slug = this.currentSlug();
+    return posts.find(p => p.slug === slug || p.num === slug) || posts[0];
+  }
+
+  renderVals() {
+    const posts = this.state.posts;
+    const p = this.activePost();
+    if (!p) return {};
+    const i = posts.indexOf(p);
+    const prev = posts[(i - 1 + posts.length) % posts.length];
+    const next = posts[(i + 1) % posts.length];
+    const parsed = parse(p.md);
+    return {
+      eyebrow: 'FIELD NOTE ' + p.num + ' · ' + p.tag,
+      title: p.title,
+      metaDesc: p.metaDesc,
+      tag: p.tag,
+      date: p.date.toUpperCase(),
+      read: p.read.toUpperCase(),
+      lead: { __html: parsed.lead },
+      blocks: parsed.blocks,
+      faqs: parsed.faqs,
+      related: parsed.related,
+      prevHref: './BlogPost.dc.html?p=' + prev.slug,
+      prevTitle: prev.title,
+      nextHref: './BlogPost.dc.html?p=' + next.slug,
+      nextTitle: next.title,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
