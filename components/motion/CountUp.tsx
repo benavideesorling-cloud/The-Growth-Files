@@ -16,9 +16,16 @@ function parseStat(text: string) {
 /**
  * Ports motion.js's initCounters() to React. Takes the exact stat string as
  * authored (e.g. "€6.9M+", "554%") and animates the first numeric token from
- * 0 to its value over 2s (cubic ease-out) once it's 40% visible, preserving
- * any prefix/suffix text and decimal precision — same regex-based parse as
- * the original, just typed and componentized.
+ * 0 to its value over 2s once it's 40% visible, preserving any prefix/suffix
+ * text and decimal precision — same regex-based parse as the original, just
+ * typed and componentized.
+ *
+ * Easing is quadratic ease-out (not cubic): cubic reaches ~87.5% of the way
+ * by the animation's halfway point, so the tail end is barely perceptible
+ * and the whole thing reads as "snapping" well under 2s even though the
+ * duration is correct. Quadratic reaches ~75% at the midpoint instead,
+ * keeping visible motion spread across the full 2s — same "quick start,
+ * gradual settle" shape, less front-loaded.
  *
  * Unlike the original (which has no reduced-motion guard on the count-up),
  * this respects prefers-reduced-motion by jumping straight to the final
@@ -56,7 +63,7 @@ export function CountUp({ text }: { text: string }) {
           const step = (ts: number) => {
             if (start === null) start = ts;
             const p = Math.min((ts - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
+            const eased = 1 - Math.pow(1 - p, 2);
             setDisplay(parsed.prefix + (parsed.target * eased).toFixed(parsed.decimals) + parsed.suffix);
             if (p < 1) requestAnimationFrame(step);
           };

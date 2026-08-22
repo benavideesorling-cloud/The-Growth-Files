@@ -542,7 +542,7 @@ Want an honest read on how much this actually matters for your specific business
     title: "How much does AI search optimization cost?",
     md: `# How much does AI search optimization cost?
 
-AI search optimization pricing varies widely by scope, but most published 2026 estimates converge on a similar range: [entry-level engagements start around $1,500 per month, mid-market programs typically run $3,000 to $8,000 per month, and enterprise-scale engagements reach $15,000 to $30,000 or more](https://theremarkableagency.com/blog/aeo-geo-agency-cost). A standalone AEO or GEO audit, without an ongoing retainer, commonly costs $1,000 to $5,000 as a one-time fee across multiple published sources.
+AI search optimization pricing varies widely by scope, but most published 2026 estimates converge on a similar range: [entry-level engagements start around €1,500 per month, mid-market programs typically run €3,000 to €8,000 per month, and enterprise-scale engagements reach €15,000 to €30,000 or more](https://theremarkableagency.com/blog/aeo-geo-agency-cost). A standalone AEO or GEO audit, without an ongoing retainer, commonly costs €1,000 to €5,000 as a one-time fee across multiple published sources.
 
 ## What actually changes the price
 
@@ -555,19 +555,19 @@ The number moves based on a few concrete factors, not the agency's branding:
 
 ## A useful warning sign
 
-Multiple independent pricing guides flag the same pattern: [offers below roughly $1,500 a month claiming full AEO scope are usually a relabeled traditional SEO retainer](https://www.310creative.com/blog/aeo-agency-pricing) without a genuine AI-specific methodology, cross-platform monitoring, or citation-focused deliverables. That doesn't mean cheap engagements are worthless, but it's worth checking specifically what's included before assuming "AEO" in the name means AI-specific work is actually happening.
+Multiple independent pricing guides flag the same pattern: [offers below roughly €1,500 a month claiming full AEO scope are usually a relabeled traditional SEO retainer](https://www.310creative.com/blog/aeo-agency-pricing) without a genuine AI-specific methodology, cross-platform monitoring, or citation-focused deliverables. That doesn't mean cheap engagements are worthless, but it's worth checking specifically what's included before assuming "AEO" in the name means AI-specific work is actually happening.
 
 ## Tools versus services
 
-Separate from agency or consultant fees, AI visibility monitoring tools themselves run roughly $20 to $500 a month depending on the platform and scope, a real ongoing cost worth budgeting for even in a mostly in-house or freelance-led approach, since manual prompt testing alone doesn't scale well past a handful of tracked queries.
+Separate from agency or consultant fees, AI visibility monitoring tools themselves run roughly €20 to €500 a month depending on the platform and scope, a real ongoing cost worth budgeting for even in a mostly in-house or freelance-led approach, since manual prompt testing alone doesn't scale well past a handful of tracked queries.
 
 ## Frequently asked questions
 
 **What's a realistic starting budget for AI search optimization?**
-Based on multiple 2026 pricing guides, a focused, mid-market engagement typically runs $3,000 to $8,000 per month, with smaller or narrower-scope engagements starting closer to $1,500 per month and enterprise programs running considerably higher.
+Based on multiple 2026 pricing guides, a focused, mid-market engagement typically runs €3,000 to €8,000 per month, with smaller or narrower-scope engagements starting closer to €1,500 per month and enterprise programs running considerably higher.
 
 **Is a one-time audit worth doing before committing to an ongoing retainer?**
-Often, yes. A standalone AEO or GEO audit commonly costs $1,000 to $5,000 and can establish a genuine baseline, where a brand currently stands across AI platforms, before committing to a larger recurring spend.
+Often, yes. A standalone AEO or GEO audit commonly costs €1,000 to €5,000 and can establish a genuine baseline, where a brand currently stands across AI platforms, before committing to a larger recurring spend.
 
 **Why do AEO and GEO cost more than equivalent traditional SEO work?**
 Several pricing guides attribute the premium to added cross-platform tracking, since a brand needs to be tested separately across ChatGPT, Perplexity, Gemini, and Google AI Overviews rather than tracked on one search engine, plus the additional content volume many programs require.
