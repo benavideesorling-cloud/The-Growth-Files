@@ -1,16 +1,18 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-const INLINE_RE = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+const INLINE_RE = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|`([^`]+)`/g;
 
 /**
- * Ports BlogPost.dc.html's inline(text) helper — parses **bold** and
- * [label](href) markdown syntax — but returns real React nodes instead of
- * an HTML string for dangerouslySetInnerHTML. The prototype also ran hrefs
- * through a mapHref() that rewrote clean paths (/blog/x, /services#y, ...)
- * into its own ?query-based routing; the source markdown already uses the
- * real site's clean paths, so no rewriting is needed here — internal links
- * are used as-is, external (https:) links open in a new tab.
+ * Ports BlogPost.dc.html's inline(text) helper — parses **bold**,
+ * [label](href), and `code` markdown syntax — but returns real React nodes
+ * instead of an HTML string for dangerouslySetInnerHTML. The prototype
+ * also ran hrefs through a mapHref() that rewrote clean paths (/blog/x,
+ * /services#y, ...) into its own ?query-based routing; the source markdown
+ * already uses the real site's clean paths, so no rewriting is needed here
+ * — internal links are used as-is, external (https:) links open in a new
+ * tab. Backtick support was added for Sanity-authored case-study card
+ * copy that references literal filenames (e.g. `llms.txt`).
  */
 export function renderInline(text: string, keyPrefix: string): ReactNode[] {
   const nodes: ReactNode[] = [];
@@ -44,6 +46,12 @@ export function renderInline(text: string, keyPrefix: string): ReactNode[] {
         <strong key={`${keyPrefix}-b-${i++}`} className="font-bold text-navy">
           {match[3]}
         </strong>,
+      );
+    } else if (match[4] !== undefined) {
+      nodes.push(
+        <span key={`${keyPrefix}-c-${i++}`} className="font-mono text-[15px]">
+          {match[4]}
+        </span>,
       );
     }
     lastIndex = match.index + match[0].length;

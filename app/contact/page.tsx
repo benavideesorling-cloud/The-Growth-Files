@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ManifestCard } from "@/components/structured/ManifestCard";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { contact } from "@/lib/config/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/schema";
+import { pageOpenGraph } from "@/lib/seo/metadata";
 
 const directContact = [
   { label: "EMAIL", value: contact.email },
@@ -12,16 +16,23 @@ const directContact = [
   { label: "LINKEDIN", value: contact.linkedinLabel },
 ];
 
-const availableFor = [
-  "Freelance performance marketing projects",
-  "Growth and AI Search consulting",
-  "Full-time performance marketing roles",
-  "Hybrid roles based in Amsterdam",
-];
+const openTo = ["Selected performance marketing projects", "Growth & AI Search projects", "Interesting opportunities"];
+
+// Verbatim from the page's own hero copy — not new copy.
+const pageDescription = "Open to selected projects and interesting opportunities.";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: pageDescription,
+  alternates: { canonical: "/contact" },
+  openGraph: pageOpenGraph({ title: "Contact | The Growth Files", description: pageDescription, url: "/contact" }),
+};
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd({ path: "/contact", name: "Contact", description: pageDescription, type: "ContactPage" })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])} />
       <Header active="Contact" />
 
       <section className="bg-navy px-5 pt-16 pb-14 sm:px-8 md:px-12 md:pt-[90px] md:pb-[70px]">
@@ -32,15 +43,14 @@ export default function ContactPage() {
               Open to the right opportunities.
             </h1>
             <p className="max-w-[460px] text-base leading-relaxed text-[#b6c0cc]">
-              Available for freelance projects, consulting and full-time performance marketing roles based
-              in Amsterdam.
+              Open to selected projects and interesting opportunities.
             </p>
           </div>
           <ManifestCard
             filename="contact-manifest.json"
             rows={[
               { label: '"location"', value: '"Amsterdam, NL"' },
-              { label: '"availability"', value: '["freelance","consulting","full-time"]' },
+              { label: '"openTo"', value: '["selected projects","interesting opportunities"]' },
               { label: '"focus"', value: '["performance","AI Search","growth"]' },
               { label: '"workingModel"', value: '"hybrid / Amsterdam-based"' },
             ]}
@@ -73,9 +83,9 @@ export default function ContactPage() {
                   <div className="text-[15px] font-bold text-navy">{item.value}</div>
                 </div>
               ))}
-              <div className="mb-4 font-mono text-xs tracking-[0.06em] text-green-dark">AVAILABLE FOR</div>
+              <div className="mb-4 font-mono text-xs tracking-[0.06em] text-green-dark">OPEN TO</div>
               <div className="flex flex-col gap-1 text-sm leading-relaxed text-[#3d4a5a]">
-                {availableFor.map((item) => (
+                {openTo.map((item) => (
                   <div key={item}>• {item}</div>
                 ))}
               </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PenTool, GraduationCap, Megaphone, Sprout, Rocket, Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
@@ -10,6 +11,20 @@ import { DisciplineGrid } from "@/components/sections/DisciplineGrid";
 import { CTABand, CTAHeading, CTADescription } from "@/components/sections/CTABand";
 import { Reveal } from "@/components/motion/Reveal";
 import { contact } from "@/lib/config/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/schema";
+import { pageOpenGraph } from "@/lib/seo/metadata";
+
+// Verbatim from the page's own H1 + first checklist line — not new copy.
+const pageDescription =
+  "Not just one tool. A connected growth discipline. I combine strategy, paid media, AI Search and analytics into one connected growth system.";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: pageDescription,
+  alternates: { canonical: "/about" },
+  openGraph: pageOpenGraph({ title: "About | The Growth Files", description: pageDescription, url: "/about" }),
+};
 
 const stats = [
   { value: "6+", label: "YEARS EXPERIENCE" },
@@ -56,6 +71,8 @@ const disciplines = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd({ path: "/about", name: "About", description: pageDescription, type: "AboutPage" })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
       <Header active="About" />
 
       <section className="bg-navy px-5 pt-16 pb-14 sm:px-8 md:px-12 md:pt-[90px] md:pb-[70px]">

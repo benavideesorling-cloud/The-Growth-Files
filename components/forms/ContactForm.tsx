@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { contactFormSchema, opportunityTypes, type ContactFormErrors } from "@/lib/validation/contact";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -10,6 +11,7 @@ const inputClass =
 const errorInputClass = "border-red-500 focus-visible:outline-red-500";
 
 export function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [formError, setFormError] = useState<string | null>(null);
@@ -63,21 +65,14 @@ export function ContactForm() {
         return;
       }
       setStatus("success");
+      // Hook for future contact_form_success tracking (GA4/GTM), added once
+      // analytics is wired up post-launch — only fires once Resend has
+      // confirmed the message was actually sent, never on click.
+      router.push("/thank-you/contact");
     } catch {
       setStatus("error");
       setFormError("Couldn't reach the server. Please check your connection and try again.");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div
-        role="status"
-        className="rounded-lg bg-green-soft p-6 text-[15px] font-semibold text-green-deep"
-      >
-        Message sent. I&apos;ll get back to you shortly.
-      </div>
-    );
   }
 
   return (
@@ -213,10 +208,10 @@ export function ContactForm() {
       <div className="flex items-center gap-4">
         <button
           type="submit"
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || status === "success"}
           className="cursor-pointer rounded-md bg-green px-[26px] py-[13px] text-sm font-bold text-navy transition-transform duration-200 ease-out hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {status === "submitting" ? "Sending…" : "Send a message"}
+          {status === "submitting" || status === "success" ? "Sending…" : "Send a message"}
         </button>
         <div className="text-[13px] text-muted">No pitch deck required. A clear description is enough.</div>
       </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -11,7 +12,16 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { CaseRecords } from "@/components/sections/CaseRecords";
 import { CTABand, CTAHeading, CTADescription } from "@/components/sections/CTABand";
 import { Reveal } from "@/components/motion/Reveal";
-import { contact } from "@/lib/config/site";
+import { contact, siteConfig } from "@/lib/config/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { webPageJsonLd } from "@/lib/seo/schema";
+import { pageOpenGraph } from "@/lib/seo/metadata";
+
+export const metadata: Metadata = {
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+  openGraph: pageOpenGraph({ title: siteConfig.name, description: siteConfig.description, url: "/" }),
+};
 
 const stats = [
   { value: "6+", label: "YEARS EXPERIENCE" },
@@ -87,6 +97,7 @@ const records = [
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd({ path: "/", name: siteConfig.name, description: siteConfig.description })} />
       <Header active="Home" />
 
       <section className="bg-navy px-5 py-24 sm:px-8 md:px-12 md:py-[100px] md:pb-[90px]">
@@ -124,7 +135,7 @@ export default function HomePage() {
 
       <section className="bg-paper px-5 pt-14 pb-10 sm:px-8 md:px-12">
         <Container>
-          <Eyebrow label="BRANDS I COLLABORATED" />
+          <Eyebrow label="BRANDS I COLLABORATED WITH" />
           <div className="mt-7">
             <BrandMarquee brands={brands} />
           </div>
@@ -185,7 +196,7 @@ export default function HomePage() {
         <div>
           <CTAHeading>Let&apos;s build something that actually works.</CTAHeading>
           <CTADescription>
-            Available for consulting, freelance projects and performance marketing roles.
+            Open to selected projects and interesting opportunities.
           </CTADescription>
         </div>
         <div className="text-left text-sm leading-[1.8] font-bold text-navy sm:text-right">

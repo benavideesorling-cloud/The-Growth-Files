@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
  * The green closing CTA section, reused across nearly every page with real
  * structural variation: some pass just a headline + button, some add a
  * description, a contact-info block, or (CaseStudies) a 3-column grid with
- * an eyebrow and an "available for" list. Rather than guess a rigid content
+ * an eyebrow and an "open to" list. Rather than guess a rigid content
  * API that would only fit one page, this is a shell (background, padding,
  * container, layout) plus typographic primitives — Phase 3 composes the
  * actual per-page content into it.

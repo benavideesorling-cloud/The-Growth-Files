@@ -20,7 +20,7 @@ export function CaseStudyCard({ entry, index }: { entry: CaseStudyIndexEntry; in
       <div className="grid grid-cols-1 gap-8 rounded-lg border-l-[3px] border-green bg-navy-panel p-9 transition-all duration-250 ease-out hover:-translate-y-1 hover:shadow-[0_16px_32px_rgba(0,0,0,0.25)] md:grid-cols-[1.6fr_1fr]">
         <div>
           <div className="mb-3 font-mono text-xs text-green">{entry.tag}</div>
-          <div className="mb-3 text-2xl font-bold text-white">{entry.title}</div>
+          <h2 className="mb-3 text-2xl font-bold text-white">{entry.title}</h2>
           <div className="mb-[18px] text-[15px] leading-relaxed text-muted">{entry.desc}</div>
           <div className="mb-[18px] font-mono text-xs text-muted-alt">{entry.meta}</div>
           <Link href={entry.href} className="text-[13px] font-bold tracking-[0.04em] text-green">

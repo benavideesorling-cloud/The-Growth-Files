@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -5,15 +6,27 @@ import { Button } from "@/components/ui/Button";
 import { ServiceGrid } from "@/components/sections/ServiceGrid";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { CTABand, CTAHeading, CTADescription } from "@/components/sections/CTABand";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd, serviceJsonLd, webPageJsonLd } from "@/lib/seo/schema";
+import { pageOpenGraph } from "@/lib/seo/metadata";
 
 const services = [
-  { num: "01", title: "Strategy", desc: "Roadmaps, priorities, workshops and senior growth direction.", output: "FOCUS" },
-  { num: "02", title: "Performance Marketing", desc: "SEA and paid media across search, social, apps and marketplaces.", output: "DEMAND" },
-  { num: "03", title: "AI Search & SEO", desc: "GEO/AEO, SEO, structured data, schema and content architecture.", output: "CITATIONS" },
-  { num: "04", title: "Analytics & Data", desc: "GA4, GTM, dashboards, attribution and funnel analysis.", output: "EVIDENCE" },
-  { num: "05", title: "Industry Growth", desc: "B2B, B2C, CRM, local visibility and app growth systems.", output: "FIT" },
-  { num: "06", title: "Creative & Content", desc: "Landing pages, CRO, UX collaboration and content planning.", output: "ACTION" },
+  { num: "01", slug: "strategy", title: "Strategy", desc: "Roadmaps, priorities, workshops and senior growth direction.", output: "FOCUS" },
+  { num: "02", slug: "performance-marketing", title: "Performance Marketing", desc: "SEA and paid media across search, social, apps and marketplaces.", output: "DEMAND" },
+  { num: "03", slug: "ai-search-seo", title: "AI Search & SEO", desc: "GEO/AEO, SEO, structured data, schema and content architecture.", output: "CITATIONS" },
+  { num: "04", slug: "analytics-data", title: "Analytics & Data", desc: "GA4, GTM, dashboards, attribution and funnel analysis.", output: "EVIDENCE" },
+  { num: "05", slug: "industry-growth", title: "Industry Growth", desc: "B2B, B2C, CRM, local visibility and app growth systems.", output: "FIT" },
+  { num: "06", slug: "creative-content", title: "Creative & Content", desc: "Landing pages, CRO, UX collaboration and content planning.", output: "ACTION" },
 ];
+
+const pageDescription = "Six connected disciplines, each with clear ownership, proof and measurable outcomes.";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: pageDescription,
+  alternates: { canonical: "/services" },
+  openGraph: pageOpenGraph({ title: "Services | The Growth Files", description: pageDescription, url: "/services" }),
+};
 
 const steps = [
   { title: "Diagnose", desc: "Find the leaks across visibility, media, tracking and conversion." },
@@ -25,6 +38,14 @@ const steps = [
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={webPageJsonLd({ path: "/services", name: "Services", description: pageDescription })} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
+      {services.map((service) => (
+        <JsonLd
+          key={service.num}
+          data={serviceJsonLd({ name: service.title, description: service.desc, path: "/services" })}
+        />
+      ))}
       <Header active="Services" />
 
       <section className="bg-navy px-5 pt-16 pb-14 sm:px-8 md:px-12 md:pt-[90px] md:pb-[70px]">
@@ -64,7 +85,7 @@ export default function ServicesPage() {
         <div>
           <CTAHeading>Let&apos;s build something that actually works.</CTAHeading>
           <CTADescription>
-            Available for consulting, freelance projects and performance marketing roles.
+            Open to selected projects and interesting opportunities.
           </CTADescription>
         </div>
         <Button href="/contact" variant="inverse">

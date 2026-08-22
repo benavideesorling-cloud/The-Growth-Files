@@ -44,6 +44,9 @@ export function NewsletterSignup() {
         return;
       }
       setStatus("success");
+      // Hook for future newsletter_subscribe_success tracking (GA4/GTM),
+      // added once analytics is wired up post-launch. Stays inline — no
+      // redirect for newsletter signups.
     } catch {
       setStatus("error");
       setError("Couldn't reach the server. Please check your connection and try again.");
