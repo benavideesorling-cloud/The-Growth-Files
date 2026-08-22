@@ -12,10 +12,15 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export function Reveal({
   children,
   index = 0,
+  offset = 20,
   className = "",
 }: {
   children: ReactNode;
   index?: number;
+  /** Initial translateY offset in px before reveal. The prototype uses
+   * different values per section (18/20/24, or 0 for fade-only) — pass the
+   * exact value from the source section rather than relying on the default. */
+  offset?: number;
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -54,7 +59,10 @@ export function Reveal({
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "none" : "translateY(20px)",
+        // Once revealed, leave `transform` unset (rather than "none") so a
+        // hover:-translate-y-* utility on this same element isn't permanently
+        // overridden by a higher-specificity inline style.
+        transform: visible ? undefined : offset ? `translateY(${offset}px)` : undefined,
         transition: visible
           ? `opacity 0.9s cubic-bezier(.16,1,.3,1) ${delay}, transform 0.9s cubic-bezier(.16,1,.3,1) ${delay}`
           : undefined,
