@@ -188,7 +188,7 @@ export default function HomePage() {
             Available for consulting, freelance projects and performance marketing roles.
           </CTADescription>
         </div>
-        <div className="text-right text-sm leading-[1.8] font-bold text-navy">
+        <div className="text-left text-sm leading-[1.8] font-bold text-navy sm:text-right">
           <div>{contact.email}</div>
           <div>{contact.phone}</div>
           <div>{contact.location}</div>

@@ -1,3 +1,4 @@
+import { PenTool, GraduationCap, Megaphone, Sprout, Rocket, Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -34,13 +35,13 @@ const story = [
 ];
 
 const journey = [
-  { icon: "✎", date: "FOUNDATION", title: "Design foundations", desc: "Self-taught in Illustrator, Photoshop and After Effects." },
-  { icon: "🎓", date: "2019", title: "BA Business Administration", desc: "Marketing · Magna Cum Laude." },
-  { icon: "↗", date: "NOV 2022–JUN 2023", title: "RocketBarn", desc: "Media strategy across B2B, B2C and lead generation." },
-  { icon: "◆", date: "2023", title: "MSc Marketing", desc: "Vrije Universiteit Amsterdam · AI advertising research." },
-  { icon: "S", date: "SEP–DEC 2023", title: "SUPS Care", desc: "Growth Marketer." },
-  { icon: "P", date: "JAN 2024–JAN 2026", title: "ParkBee", desc: "Performance marketing at scale across markets and apps." },
-  { icon: "⌕", date: "FEB 2026–PRESENT", title: "Refreshworks.ai", desc: "AI Search, paid media, SEO, CRM and growth strategy." },
+  { icon: PenTool, date: "FOUNDATION", title: "Design foundations", desc: "Self-taught in Illustrator, Photoshop and After Effects." },
+  { icon: GraduationCap, date: "2019", title: "BA Business Administration", desc: "Marketing · Magna Cum Laude." },
+  { icon: Megaphone, date: "NOV 2022–JUN 2023", title: "RocketBarn", desc: "Media strategy across B2B, B2C and lead generation." },
+  { icon: GraduationCap, date: "2023", title: "MSc Marketing", desc: "Vrije Universiteit Amsterdam · AI advertising research." },
+  { icon: Sprout, date: "SEP–DEC 2023", title: "Growth Marketer." },
+  { icon: Rocket, date: "JAN 2024–JAN 2026", title: "ParkBee", desc: "Performance marketing at scale across markets and apps." },
+  { icon: Search, date: "FEB 2026–PRESENT", title: "Refreshworks.ai", desc: "AI Search, paid media, SEO, CRM and growth strategy." },
 ];
 
 const disciplines = [
@@ -146,7 +147,7 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
-        <div className="text-right text-sm leading-[1.9] font-bold text-navy">
+        <div className="text-left text-sm leading-[1.9] font-bold text-navy sm:text-right">
           <div>{contact.email}</div>
           <div>{contact.phone}</div>
           <div>{contact.location}</div>

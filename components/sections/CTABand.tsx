@@ -25,7 +25,7 @@ export function CTABand({
         className={
           layout === "grid"
             ? "grid gap-8 md:grid-cols-[1.3fr_1fr_0.8fr]"
-            : "flex flex-wrap items-center justify-between gap-8"
+            : "flex flex-wrap items-center justify-between gap-8 md:flex-nowrap"
         }
       >
         {children}
