@@ -3,6 +3,10 @@ import { Inter, IBM_Plex_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Footer } from "@/components/layout/Footer";
 import { OutboundLinkTracker } from "@/components/analytics/OutboundLinkTracker";
+import { ConsentDefaultScript } from "@/components/consent/ConsentDefaultScript";
+import { ConsentProvider } from "@/components/consent/ConsentProvider";
+import { CookieBanner } from "@/components/consent/CookieBanner";
+import { CookiePreferencesModal } from "@/components/consent/CookiePreferencesModal";
 import { siteConfig } from "@/lib/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { personRootJsonLd, websiteJsonLd } from "@/lib/seo/schema";
@@ -52,6 +56,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable}`}>
+      <ConsentDefaultScript />
       {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="font-sans antialiased">
         {gtmId ? (
@@ -67,8 +72,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <OutboundLinkTracker />
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={personRootJsonLd()} />
-        {children}
-        <Footer />
+        <ConsentProvider>
+          {children}
+          <Footer />
+          <CookieBanner />
+          <CookiePreferencesModal />
+        </ConsentProvider>
       </body>
     </html>
   );

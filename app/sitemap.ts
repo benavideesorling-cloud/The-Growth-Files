@@ -5,7 +5,7 @@ import { sitemapCaseStudiesQuery, sitemapPostsQuery } from "@/sanity/lib/queries
 
 type SitemapDoc = { slug: string; publishedAt?: string; updatedAt?: string; noindex?: boolean };
 
-const STATIC_ROUTES = ["", "/services", "/about", "/contact", "/blog", "/case-studies"];
+const STATIC_ROUTES = ["", "/services", "/about", "/contact", "/blog", "/case-studies", "/privacy"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [posts, caseStudies] = await Promise.all([

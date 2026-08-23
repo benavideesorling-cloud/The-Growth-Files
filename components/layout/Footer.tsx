@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { footerNav, siteConfig } from "@/lib/config/site";
+import { CookieSettingsLink } from "@/components/consent/CookieSettingsLink";
 
 export function Footer() {
   return (
@@ -11,6 +12,10 @@ export function Footer() {
             {item.label}
           </Link>
         ))}
+        <Link href="/privacy" className="text-[13px] text-muted">
+          Privacy
+        </Link>
+        <CookieSettingsLink className="cursor-pointer text-[13px] text-muted" />
       </nav>
       <div className="text-[13px] text-muted">© 2026 {siteConfig.name}</div>
     </footer>
