@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FAQList } from "@/components/sections/FAQList";
 import { BlogPortableText } from "@/components/sanity/BlogPortableText";
+import { BlogViewTracker } from "@/components/analytics/BlogViewTracker";
 import { renderInline } from "@/lib/content/inline";
 import { formatDisplayDate } from "@/lib/content/formatDate";
 import { sanityFetch } from "@/sanity/lib/fetch";
@@ -91,6 +92,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
+      <BlogViewTracker slug={post.slug} name={post.title} />
       <JsonLd
         data={articleJsonLd({
           path: `/blog/${post.slug}`,
