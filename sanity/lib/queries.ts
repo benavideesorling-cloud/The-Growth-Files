@@ -162,3 +162,26 @@ export const sitemapCaseStudiesQuery = groq`
     "noindex": seo.noindex
   }
 `;
+
+// Projections for llms.txt — published, non-noindex documents only, with
+// just the fields the knowledge document actually surfaces.
+export const llmsTxtPostsQuery = groq`
+  *[_type == "post" && defined(slug.current) && seo.noindex != true] | order(publishedAt desc) {
+    title,
+    "slug": slug.current,
+    excerpt,
+    "categories": categories[]->title,
+    "faqs": faqs[] { "q": question, "a": answer }
+  }
+`;
+
+export const llmsTxtCaseStudiesQuery = groq`
+  *[_type == "caseStudy" && defined(slug.current) && seo.noindex != true] | order(order asc) {
+    "slug": slug.current,
+    h1,
+    subtitle,
+    metaLine,
+    index,
+    results
+  }
+`;

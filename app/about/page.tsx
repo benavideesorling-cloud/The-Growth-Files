@@ -14,6 +14,7 @@ import { contact } from "@/lib/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/lib/seo/schema";
 import { pageOpenGraph } from "@/lib/seo/metadata";
+import { stats } from "@/lib/content/stats";
 
 // Verbatim from the page's own H1 + first checklist line — not new copy.
 const pageDescription =
@@ -25,14 +26,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   openGraph: pageOpenGraph({ title: "About | The Growth Files", description: pageDescription, url: "/about" }),
 };
-
-const stats = [
-  { value: "6+", label: "YEARS EXPERIENCE" },
-  { value: "€1.3M+", label: "AD SPEND MANAGED" },
-  { value: "€6.9M+", label: "REVENUE GENERATED" },
-  { value: "554%", label: "PEAK ROAS" },
-  { value: "250+", label: "WEEKLY AI CITATIONS" },
-];
 
 const checklist = [
   "I combine strategy, paid media, AI Search and analytics into one connected growth system.",

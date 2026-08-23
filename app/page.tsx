@@ -16,20 +16,13 @@ import { contact, siteConfig } from "@/lib/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { webPageJsonLd } from "@/lib/seo/schema";
 import { pageOpenGraph } from "@/lib/seo/metadata";
+import { stats } from "@/lib/content/stats";
 
 export const metadata: Metadata = {
   description: siteConfig.description,
   alternates: { canonical: "/" },
   openGraph: pageOpenGraph({ title: siteConfig.name, description: siteConfig.description, url: "/" }),
 };
-
-const stats = [
-  { value: "6+", label: "YEARS EXPERIENCE" },
-  { value: "€1.3M+", label: "AD SPEND MANAGED" },
-  { value: "€6.9M+", label: "REVENUE GENERATED" },
-  { value: "554%", label: "PEAK ROAS" },
-  { value: "250+", label: "WEEKLY AI CITATIONS" },
-];
 
 const ledgerRows = [
   { id: "01", label: '"visibility"', value: "AI Search + SEO" },
@@ -81,8 +74,8 @@ const records = [
   {
     tag: "CASE 002",
     title: "AI Search Visibility",
-    stat: "250+",
-    sub: "weekly citations across AI platforms",
+    stat: "500+",
+    sub: "monthly citations across AI platforms",
     href: "/case-studies/ai-visibility-geo-aeo",
   },
   {
