@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { contactFormSchema, opportunityTypes, type ContactFormErrors } from "@/lib/validation/contact";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -65,9 +66,12 @@ export function ContactForm() {
         return;
       }
       setStatus("success");
-      // Hook for future contact_form_success tracking (GA4/GTM), added once
-      // analytics is wired up post-launch — only fires once Resend has
-      // confirmed the message was actually sent, never on click.
+      // Fires once, only here — after the API has confirmed the message
+      // was actually sent, never on click/attempt/error. No form field
+      // values are included, just the event name itself.
+      if (typeof window !== "undefined") {
+        sendGTMEvent({ event: "contact_form_submit" });
+      }
       router.push("/thank-you/contact");
     } catch {
       setStatus("error");
