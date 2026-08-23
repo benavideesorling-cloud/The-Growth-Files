@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { CaseStudyDetailTemplate } from "@/components/case-studies/CaseStudyDetailTemplate";
+import { CaseStudyViewTracker } from "@/components/analytics/CaseStudyViewTracker";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { client } from "@/sanity/lib/client";
 import { allCaseStudySlugsQuery, caseStudyBySlugQuery } from "@/sanity/lib/queries";
@@ -70,6 +71,7 @@ export default async function CaseStudyDetailPage({ params }: { params: Promise<
 
   return (
     <>
+      <CaseStudyViewTracker slug={study.slug} name={study.h1} />
       <JsonLd
         data={articleJsonLd({
           path: `/case-studies/${study.slug}`,
