@@ -1,9 +1,30 @@
+/**
+ * Resolves NEXT_PUBLIC_SITE_URL defensively: `??` alone only guards against
+ * `undefined`/`null`, not an empty or whitespace-only string — and an empty
+ * string is exactly what reaches this code if the variable is declared but
+ * left blank for the active Vercel environment (or unset locally). Any
+ * blank or non-URL value falls back to localhost rather than letting it
+ * reach `new URL()` downstream in lib/seo/schema.ts. When the variable is
+ * present and valid, its value is always used as-is (production prefers
+ * the real configured domain over the fallback).
+ */
+function resolveSiteUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (!raw) return "http://localhost:3000";
+
+  try {
+    return new URL(raw).toString().replace(/\/$/, "");
+  } catch {
+    return "http://localhost:3000";
+  }
+}
+
 export const siteConfig = {
   name: "The Growth Files",
   tagline: "Website growth + performance systems",
   description:
     "I help brands grow through performance marketing, AI Search, SEO, SEA, analytics and growth strategy, connecting visibility, paid media, tracking and conversion into one measurable system.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: resolveSiteUrl(),
 } as const;
 
 export const contact = {
